@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/branchDetailsActivity">
+
+    <activity
+        android:id="@+id/branchDetailsActivity"
+        android:name="com.example.petpatandroidappdemo.ui.activities.BranchDetailsActivity"
+        android:label="activity_branch_details"
+        tools:layout="@layout/activity_branch_details" />
+</navigation>
