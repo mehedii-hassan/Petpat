@@ -158,6 +158,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:layout_marginBottom="15dp"
                     android:background="@drawable/custom_layout_desing"
                     android:padding="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -177,9 +178,11 @@
                         android:id="@+id/rvServices"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
                         app:layout_constraintTop_toBottomOf="@+id/tvServices" />
 
                     <TextView
+                        android:id="@+id/tvViewMoreOne"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -191,6 +194,235 @@
                         android:textSize="12sp"
                         app:layout_constraintTop_toBottomOf="@id/rvServices" />
 
+
+                    <TextView
+                        android:id="@+id/tvProducts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="Procucts"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvViewMoreOne" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProducts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        app:layout_constraintTop_toBottomOf="@+id/tvProducts" />
+
+                    <TextView
+                        android:id="@+id/tvCarServiceLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Car Service Location"
+                        android:textSize="16sp"
+                        app:layout_constraintTop_toBottomOf="@id/rvProducts" />
+
+
+                    <TextView
+                        android:id="@+id/tvCarServiceLocationAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Ar Rabwah,Riyadh,Saudi Arabia"
+                        android:textSize="13sp"
+                        app:layout_constraintTop_toBottomOf="@id/tvCarServiceLocation" />
+
+
+                    <ImageView
+                        android:id="@+id/ivMap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:src="@drawable/map"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCarServiceLocationAddress" />
+
+
+                    <TextView
+                        android:id="@+id/tvWorkingHours"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Working Hours"
+                        android:textSize="16sp"
+                        app:layout_constraintTop_toBottomOf="@id/ivMap" />
+
+                    <TextView
+                        android:id="@+id/tvSunday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sunday"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvWorkingHours" />
+
+                    <LinearLayout
+                        android:id="@+id/llWorkinHoursOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvSunday">
+
+                        <TextView
+                            android:id="@+id/tvAM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10.00AM"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:text="-"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvPM"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6.00PM"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvMonday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monday"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvSunday" />
+
+                    <LinearLayout
+                        android:id="@+id/llWorkinHoursTwo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvMonday">
+
+                        <TextView
+                            android:id="@+id/tvAMTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10.00AM"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:text="-"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvPMTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6.00PM"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTuesday"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tuesday"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvMonday" />
+
+                    <LinearLayout
+                        android:id="@+id/llWorkinHoursThree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/tvTuesday">
+
+                        <TextView
+                            android:id="@+id/tvAMThree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10.00AM"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="4dp"
+                            android:text="-"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvPMThree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="6.00PM"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvViewMoreTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custom_button_design"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="view more"
+                        android:textColor="#51B0ED"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toBottomOf="@id/tvTuesday" />
+
+
+                    <TextView
+                        android:id="@+id/tvReviewAndRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Review and Ratings"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvViewMoreTwo" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvUserReview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        app:layout_constraintTop_toBottomOf="@+id/tvReviewAndRating" />
+
+                    <TextView
+                        android:id="@+id/tvViewMoreThree"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/custom_button_design"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="view more"
+                        android:textColor="#51B0ED"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toBottomOf="@id/rvUserReview" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

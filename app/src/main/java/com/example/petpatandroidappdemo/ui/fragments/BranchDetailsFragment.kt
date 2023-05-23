@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentBranchDetailsBinding
 import com.example.petpatandroidappdemo.databinding.RvServicesItemDesignBinding
+import com.example.petpatandroidappdemo.ui.adapters.ProductsAdapter
+import com.example.petpatandroidappdemo.ui.adapters.ReviewAndRatingAdapter
 import com.example.petpatandroidappdemo.ui.adapters.ServicesAdapter
 
 class BranchDetailsFragment : Fragment() {
@@ -26,15 +28,33 @@ class BranchDetailsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val list = ArrayList<Int>()
-        list.add(R.drawable.image)
-        list.add(R.drawable.image)
-        list.add(R.drawable.image)
+        val servicesList = ArrayList<Int>()
+        servicesList.add(R.drawable.image)
+        servicesList.add(R.drawable.image)
+        servicesList.add(R.drawable.image)
+
+        val productsList = ArrayList<Int>()
+        productsList.add(R.drawable.image_product)
+        productsList.add(R.drawable.image_product)
+        productsList.add(R.drawable.image_product)
+
+        val profileList = ArrayList<Int>()
+        profileList.add(R.drawable.profile)
+        profileList.add(R.drawable.profile)
+        profileList.add(R.drawable.profile)
 
 
-        val adapter = ServicesAdapter(list)
+        val servicesAdapter = ServicesAdapter(servicesList)
         binding.rvServices.layoutManager = LinearLayoutManager(view.context)
-        binding.rvServices.adapter = adapter
+        binding.rvServices.adapter = servicesAdapter
+
+        val productsAdapter = ProductsAdapter(productsList)
+        binding.rvProducts.layoutManager = LinearLayoutManager(view.context)
+        binding.rvProducts.adapter = productsAdapter
+
+        val reviewAdapter = ReviewAndRatingAdapter(profileList)
+        binding.rvUserReview.layoutManager = LinearLayoutManager(view.context)
+        binding.rvUserReview.adapter = reviewAdapter
 
 
     }
