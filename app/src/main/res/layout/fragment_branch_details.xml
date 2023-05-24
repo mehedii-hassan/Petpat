@@ -15,11 +15,13 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+             >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                >
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,13 +45,15 @@
                             android:src="@drawable/arrow_left"
                             app:layout_constraintBottom_toBottomOf="@+id/tvBranchDetails"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/tvBranchDetails" />
+                            app:layout_constraintTop_toTopOf="@+id/tvBranchDetails"
+                            app:tint="#040D1B" />
 
                         <TextView
                             android:id="@+id/tvBranchDetails"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Branch details"
+                            android:text="@string/branch_details"
+                            android:textColor="#040D1B"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/ivCart"
@@ -58,8 +62,8 @@
 
                         <ImageView
                             android:id="@+id/ivCart"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
                             android:src="@drawable/shopping_cart"
                             app:layout_constraintBottom_toBottomOf="@+id/tvBranchDetails"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -68,99 +72,153 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/containerOne"
+
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:cardElevation="0dp"
                         app:layout_constraintTop_toBottomOf="@id/clTopId">
 
-
-                        <ImageView
-                            android:id="@+id/ivSlider"
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/containerOne"
                             android:layout_width="match_parent"
-                            android:layout_height="200dp"
-                            android:layout_marginTop="20dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/slider_img"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/tvLusciousLocks"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="Luscious Locks"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/ivSlider" />
 
-                        <com.google.android.material.button.MaterialButton
-                            android:layout_width="80dp"
-                            android:layout_height="40dp"
-                            android:backgroundTint="#9CE6DDDD"
-                            android:text="open"
-                            android:textColor="@color/black"
-                            android:textSize="10sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tvLusciousLocks"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/tvLusciousLocks" />
+                            <ImageView
+                                android:id="@+id/ivVector"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="10dp"
+                                android:elevation="4dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/group"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                        <ImageView
-                            android:id="@+id/ivDog"
-                            android:layout_width="25dp"
-                            android:layout_height="26dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="10dp"
-                            android:src="@drawable/vector"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/tvLusciousLocks" />
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:background="@color/white"
-                            android:backgroundTint="#9CE6DDDD"
-                            app:cardCornerRadius="20dp"
-                            app:cardElevation="4dp"
-                            app:layout_constraintStart_toEndOf="@+id/ivDog"
-                            app:layout_constraintTop_toTopOf="@id/ivDog">
-
-                            <LinearLayout
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/cvImageSlider"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@color/white"
-                                android:orientation="horizontal">
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="14dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintTop_toTopOf="parent">
 
-                                <ImageView
-                                    android:layout_width="25dp"
-                                    android:layout_height="25dp"
-                                    android:layout_gravity="center"
-                                    android:paddingStart="4dp"
-                                    android:src="@drawable/baseline_star_24" />
+                                <com.denzcoskun.imageslider.ImageSlider
+                                    android:id="@+id/imageSlider"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="187dp"
+                                    app:iss_auto_cycle="true"
+                                    app:iss_delay="1000"
+                                    app:iss_period="1000"
+                                    app:iss_text_align="CENTER" />
+                            </androidx.cardview.widget.CardView>
+
+
+                            <TextView
+                                android:id="@+id/tvLusciousLocks"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/luscious_locks"
+                                android:textColor="#040D1B"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/cvImageSlider" />
+
+                            <!--<com.google.android.material.button.MaterialButton
+                                android:layout_width="80dp"
+                                android:layout_height="35dp"
+                                android:backgroundTint="#F7F9FC"
+                                android:text="@string/open"
+                                android:textColor="#040D1B"
+                                android:textSize="12sp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tvLusciousLocks"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/tvLusciousLocks" />-->
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="70dp"
+                                android:layout_height="30dp"
+                                android:backgroundTint="#F7F9FC"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintBottom_toBottomOf="@+id/tvLusciousLocks"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/tvLusciousLocks">
+
 
                                 <TextView
+                                    android:id="@+id/tvOpen"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_marginStart="4dp"
-                                    android:paddingEnd="4dp"
-                                    android:text="4.5" />
-                            </LinearLayout>
-                        </androidx.cardview.widget.CardView>
+                                    android:text="@string/open"
+                                    android:textColor="#040D1B"
+                                    android:textSize="12sp" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <ImageView
+                                android:id="@+id/ivDog"
+                                android:layout_width="25dp"
+                                android:layout_height="26dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/vector"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/tvLusciousLocks"
+                                app:tint="#3CA4FE" />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:background="#E6E6E6"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="4dp"
+                                app:layout_constraintStart_toEndOf="@+id/ivDog"
+                                app:layout_constraintTop_toBottomOf="@+id/tvLusciousLocks">
+
+                                <LinearLayout
+                                    android:layout_width="50dp"
+                                    android:layout_height="24dp"
+                                    android:background="#E6E6E6"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="14dp"
+                                        android:layout_height="13dp"
+                                        android:layout_gravity="center"
+                                        android:paddingStart="4dp"
+                                        android:paddingEnd="0dp"
+                                        android:src="@drawable/baseline_star_24" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="4dp"
+                                        android:text="@string/_4_5"
+                                        android:textColor="#516270" />
+                                </LinearLayout>
+                            </androidx.cardview.widget.CardView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="40dp"
                     android:background="@drawable/custom_layout_desing"
-                    android:padding="10dp"
+                    android:padding="15dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/clTopBranchDetailsFragment">
 
@@ -169,8 +227,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:text="Services"
-                        android:textSize="16sp"
+                        android:text="@string/services"
+                        android:textColor="#040D1B"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -185,13 +245,15 @@
                         android:id="@+id/tvViewMoreOne"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="5dp"
                         android:background="@drawable/custom_button_design"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="view more"
+                        android:text="@string/view_more"
                         android:textColor="#51B0ED"
-                        android:textSize="12sp"
+                        android:textSize="15sp"
                         app:layout_constraintTop_toBottomOf="@id/rvServices" />
 
 
@@ -203,7 +265,9 @@
                         android:gravity="center"
                         android:padding="10dp"
                         android:text="Procucts"
-                        android:textSize="16sp"
+                        android:textColor="#040D1B"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvViewMoreOne" />
 
@@ -215,23 +279,41 @@
                         app:layout_constraintTop_toBottomOf="@+id/tvProducts" />
 
                     <TextView
-                        android:id="@+id/tvCarServiceLocation"
+                        android:id="@+id/tvViewMoreTwo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/custom_button_design"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="@string/view_more"
+                        android:textColor="#51B0ED"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toBottomOf="@id/rvProducts" />
+
+                    <TextView
+                        android:id="@+id/tvBranchLocation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Car Service Location"
-                        android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@id/rvProducts" />
+                        android:text="Branch Location"
+                        android:textColor="#040D1B"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@id/tvViewMoreTwo" />
 
 
                     <TextView
-                        android:id="@+id/tvCarServiceLocationAddress"
+                        android:id="@+id/tvBranchLocationAddress"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Ar Rabwah,Riyadh,Saudi Arabia"
-                        android:textSize="13sp"
-                        app:layout_constraintTop_toBottomOf="@id/tvCarServiceLocation" />
+                        android:textColor="#333333"
+                        android:textSize="14sp"
+                        app:layout_constraintTop_toBottomOf="@id/tvBranchLocation" />
 
 
                     <ImageView
@@ -240,7 +322,7 @@
                         android:layout_height="200dp"
                         android:src="@drawable/map"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCarServiceLocationAddress" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvBranchLocationAddress" />
 
 
                     <TextView
@@ -249,20 +331,24 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Working Hours"
-                        android:textSize="16sp"
+                        android:textColor="#333333"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
                         app:layout_constraintTop_toBottomOf="@id/ivMap" />
 
                     <TextView
                         android:id="@+id/tvSunday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sunday"
-                        android:textSize="12sp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/sunday"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvWorkingHours" />
 
                     <LinearLayout
-                        android:id="@+id/llWorkinHoursOne"
+                        android:id="@+id/llWorkingHoursOne"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -274,23 +360,26 @@
                             android:id="@+id/tvAM"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10.00AM"
-                            android:textSize="12sp" />
+                            android:text="@string/_10_00am"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:layout_marginEnd="4dp"
-                            android:text="-"
-                            android:textSize="12sp" />
+                            android:text="@string/_minus"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/tvPM"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="6.00PM"
-                            android:textSize="12sp" />
+                            android:text="@string/_6_00pm"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
@@ -298,13 +387,15 @@
                         android:id="@+id/tvMonday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Monday"
-                        android:textSize="12sp"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/monday"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvSunday" />
 
                     <LinearLayout
-                        android:id="@+id/llWorkinHoursTwo"
+                        android:id="@+id/llWorkingHoursTwo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -316,23 +407,26 @@
                             android:id="@+id/tvAMTwo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10.00AM"
-                            android:textSize="12sp" />
+                            android:text="@string/_10_00am"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:layout_marginEnd="4dp"
-                            android:text="-"
-                            android:textSize="12sp" />
+                            android:text="@string/_minus"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/tvPMTwo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="6.00PM"
-                            android:textSize="12sp" />
+                            android:text="@string/_6_00pm"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
@@ -340,13 +434,15 @@
                         android:id="@+id/tvTuesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tuesday"
-                        android:textSize="12sp"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/tuesday"
+                        android:textColor="#333333"
+                        android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvMonday" />
 
                     <LinearLayout
-                        android:id="@+id/llWorkinHoursThree"
+                        android:id="@+id/llWorkingHoursThree"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -358,37 +454,40 @@
                             android:id="@+id/tvAMThree"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10.00AM"
-                            android:textSize="12sp" />
+                            android:text="@string/_10_00am"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="4dp"
                             android:layout_marginEnd="4dp"
-                            android:text="-"
-                            android:textSize="12sp" />
+                            android:text="@string/_minus"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/tvPMThree"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="6.00PM"
-                            android:textSize="12sp" />
+                            android:text="@string/_6_00pm"
+                            android:textColor="#333333"
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/tvViewMoreTwo"
+                        android:id="@+id/tvViewMoreThree"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="30dp"
                         android:background="@drawable/custom_button_design"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="view more"
+                        android:text="@string/view_more"
                         android:textColor="#51B0ED"
-                        android:textSize="12sp"
+                        android:textSize="15sp"
                         app:layout_constraintTop_toBottomOf="@id/tvTuesday" />
 
 
@@ -396,30 +495,32 @@
                         android:id="@+id/tvReviewAndRating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Review and Ratings"
-                        android:textSize="16sp"
+                        android:layout_marginTop="30dp"
+                        android:text="@string/review_and_ratings"
+                        android:textColor="#040D1B"
+                        android:textSize="18sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvViewMoreTwo" />
+                        app:layout_constraintTop_toBottomOf="@id/tvViewMoreThree" />
 
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvUserReview"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:nestedScrollingEnabled="false"
                         app:layout_constraintTop_toBottomOf="@+id/tvReviewAndRating" />
 
                     <TextView
-                        android:id="@+id/tvViewMoreThree"
+                        android:id="@+id/tvViewMoreFour"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="30dp"
                         android:background="@drawable/custom_button_design"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="view more"
+                        android:text="@string/view_more"
                         android:textColor="#51B0ED"
                         android:textSize="12sp"
                         app:layout_constraintTop_toBottomOf="@id/rvUserReview" />

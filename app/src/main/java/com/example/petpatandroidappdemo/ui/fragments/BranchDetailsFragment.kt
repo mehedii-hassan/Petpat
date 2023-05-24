@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentBranchDetailsBinding
 import com.example.petpatandroidappdemo.databinding.RvServicesItemDesignBinding
@@ -55,6 +57,17 @@ class BranchDetailsFragment : Fragment() {
         val reviewAdapter = ReviewAndRatingAdapter(profileList)
         binding.rvUserReview.layoutManager = LinearLayoutManager(view.context)
         binding.rvUserReview.adapter = reviewAdapter
+
+
+        //imageSlider----------------------
+        val sliderList = ArrayList<SlideModel>() // Create image list
+
+
+        sliderList.add(SlideModel(R.drawable.slider_img, ScaleTypes.FIT))
+        sliderList.add(SlideModel(R.drawable.slider_img, ScaleTypes.FIT))
+        sliderList.add(SlideModel(R.drawable.slider_img, ScaleTypes.FIT))
+        sliderList.add(SlideModel(R.drawable.slider_img, ScaleTypes.FIT))
+        binding.imageSlider.setImageList(sliderList, ScaleTypes.FIT)
 
 
     }

@@ -9,21 +9,21 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:cardCornerRadius="10dp">
+        android:layout_marginTop="10dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvProfile"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             app:cardCornerRadius="50dp"
+            app:cardElevation="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/ivProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/profile" />
 
         </androidx.cardview.widget.CardView>
@@ -39,7 +39,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Monalisa" />
+                android:text="@string/monalisa"
+                android:textColor="#333333"
+                android:textSize="14dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -50,12 +53,15 @@
                     android:id="@+id/tvProfileRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5.0"
+                    android:layout_gravity="center"
+                    android:text="@string/_5_0"
+                    android:textColor="#333333"
                     android:textSize="16sp" />
 
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_gravity="center"
                     android:layout_marginStart="5dp"
                     android:src="@drawable/baseline_star_24" />
             </LinearLayout>
@@ -68,7 +74,8 @@
             android:layout_height="wrap_content"
             android:padding="2dp"
             android:text="@string/durmy_txt"
-            android:textSize="12sp"
+            android:textColor="#333333"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@id/cvProfile"
             app:layout_constraintTop_toBottomOf="@id/cvProfile" />
 

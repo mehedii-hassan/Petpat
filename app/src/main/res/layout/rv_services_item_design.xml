@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:elevation="4dp"
         app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
         app:contentPadding="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,6 +23,7 @@
                 android:layout_width="90dp"
                 android:layout_height="90dp"
                 app:cardCornerRadius="10dp"
+                app:cardElevation="0dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -48,8 +49,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="Professional Beauty"
-                    android:textColor="@color/black"
+                    android:text="@string/professional_beauty"
+                    android:textColor="#040D1B"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -59,8 +60,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="5dp"
-                    android:text="Service"
-                    android:textColor="@color/black"
+                    android:text="@string/service"
+                    android:textColor="#040D1B"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 

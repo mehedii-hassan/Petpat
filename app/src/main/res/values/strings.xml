@@ -3,4 +3,25 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="durmy_txt">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s</string>
+    <string name="branch_details">Branch details</string>
+    <string name="luscious_locks">Luscious Locks</string>
+    <string name="open">open</string>
+    <string name="_4_5">4.5</string>
+    <string name="services">Services</string>
+    <string name="professional_beauty">Professional Beauty</string>
+    <string name="service">Service</string>
+    <string name="view_more">View more</string>
+    <string name="_50_00">50.00</string>
+    <string name="sr">SR</string>
+    <string name="dog_food_chicken_flavor">Dog Food,Chicken Flavor</string>
+    <string name="pedigree_adult_dry">Pedigree Adult Dry</string>
+    <string name="sunday">Sunday</string>
+    <string name="_10_00am">10.00AM</string>
+    <string name="_minus">-</string>
+    <string name="_6_00pm">6.00PM</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="review_and_ratings">Review and Ratings</string>
+    <string name="monalisa">Monalisa</string>
+    <string name="_5_0">5.0</string>
 </resources>
