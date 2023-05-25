@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp"
+    tools:context=".ui.fragments.dialogfragments.ProductDetailsDialogFragment">
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivProductDetails"
+        android:layout_width="match_parent"
+        android:layout_height="217dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageView.Corner"
+        app:srcCompat="@drawable/dog" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:contentPadding="20dp"
+        app:contentPaddingBottom="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/ivProductDetails">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/product_details_dialog_background">
+
+
+            <TextView
+                android:id="@+id/tvPedigree"
+                android:layout_width="208dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_"
+                android:textColor="#040D1B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/llOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/tvPedigree"
+                app:layout_constraintTop_toBottomOf="@+id/tvPedigree">
+
+                <TextView
+                    android:id="@+id/tvSROne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="@string/sr"
+                    android:textColor="#6EECC7"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/tvPriceO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="@string/_50_00"
+                    android:textColor="#6EECC7"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPedigree"
+                app:layout_constraintTop_toTopOf="@id/llOne">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/minus"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/plus"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvAddToCart"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/add_to_cart_background_design"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/llTwo" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

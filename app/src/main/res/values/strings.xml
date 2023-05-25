@@ -26,4 +26,10 @@
     <string name="_5_0">5.0</string>
     <string name="service_details">Service details</string>
     <string name="braids">Braids</string>
+    <string name="close">Close</string>
+    <string name="_continue">Continue</string>
+    <string name="warning">Warning</string>
+    <string name="text_">Pedigree Adult Dry Dog Food, Chicken Flavor</string>
+    <string name="todo">TODO</string>
+    <string name="add_to_cart">Add to Cart</string>
 </resources>
