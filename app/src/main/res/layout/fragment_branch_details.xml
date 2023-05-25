@@ -33,6 +33,8 @@
                         android:id="@+id/clTopId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
                         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -163,7 +165,7 @@
                             <ImageView
                                 android:id="@+id/ivDog"
                                 android:layout_width="25dp"
-                                android:layout_height="26dp"
+                                android:layout_height="40dp"
                                 android:layout_marginTop="10dp"
                                 android:src="@drawable/vector"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -177,32 +179,35 @@
                                 android:layout_marginTop="10dp"
                                 android:background="#E6E6E6"
                                 app:cardCornerRadius="20dp"
-                                app:cardElevation="4dp"
+                                app:cardElevation="2dp"
                                 app:layout_constraintStart_toEndOf="@+id/ivDog"
-                                app:layout_constraintTop_toBottomOf="@+id/tvLusciousLocks">
+                                app:layout_constraintTop_toTopOf="@+id/ivDog">
 
                                 <LinearLayout
                                     android:layout_width="50dp"
                                     android:layout_height="24dp"
-                                    android:background="#E6E6E6"
+                                    android:background="@color/white"
                                     android:gravity="center"
                                     android:orientation="horizontal">
 
                                     <ImageView
-                                        android:layout_width="14dp"
-                                        android:layout_height="13dp"
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
                                         android:layout_gravity="center"
                                         android:paddingStart="4dp"
                                         android:paddingEnd="0dp"
                                         android:src="@drawable/baseline_star_24" />
 
                                     <TextView
+                                        android:id="@+id/tvRating"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_gravity="center"
                                         android:layout_marginStart="4dp"
+                                        android:paddingEnd="5dp"
                                         android:text="@string/_4_5"
-                                        android:textColor="#516270" />
+                                        android:textColor="#516270"
+                                        android:textSize="12sp" />
                                 </LinearLayout>
                             </androidx.cardview.widget.CardView>
 
@@ -339,7 +344,7 @@
                         android:id="@+id/tvSunday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="22dp"
                         android:text="@string/sunday"
                         android:textColor="#333333"
                         android:textSize="16sp"
@@ -386,7 +391,7 @@
                         android:id="@+id/tvMonday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="18dp"
                         android:text="@string/monday"
                         android:textColor="#333333"
                         android:textSize="16sp"
@@ -433,7 +438,7 @@
                         android:id="@+id/tvTuesday"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
+                        android:layout_marginTop="18dp"
                         android:text="@string/tuesday"
                         android:textColor="#333333"
                         android:textSize="16sp"
@@ -521,7 +526,7 @@
                         android:padding="10dp"
                         android:text="@string/view_more"
                         android:textColor="#51B0ED"
-                        android:textSize="12sp"
+                        android:textSize="15sp"
                         app:layout_constraintTop_toBottomOf="@id/rvUserReview" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

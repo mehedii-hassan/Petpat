@@ -40,6 +40,7 @@
                     android:id="@+id/tvSR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:text="@string/sr"
                     android:textColor="#333333"
                     android:textSize="16sp" />
@@ -50,6 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
                     android:text="@string/_50_00"
                     android:textColor="#333333"
                     android:textSize="16sp" />

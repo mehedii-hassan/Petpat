@@ -15,4 +15,9 @@
         android:name="com.example.petpatandroidappdemo.ui.fragments.ServiceDetailsFragment"
         android:label="ServiceDetailsFragment"
         tools:layout="@layout/fragment_service_details" />
+    <fragment
+        android:id="@+id/carDetailsFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.CarDetailsFragment"
+        android:label="CarDetailsFragment"
+        tools:layout="@layout/fragment_car_details" />
 </navigation>
