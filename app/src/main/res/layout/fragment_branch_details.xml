@@ -33,8 +33,7 @@
                         android:id="@+id/clTopId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="20dp"
-                        android:paddingBottom="20dp"
+                        android:layout_marginTop="45dp"
                         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -77,7 +76,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="32dp"
                         app:cardElevation="0dp"
                         app:layout_constraintTop_toBottomOf="@id/clTopId">
 
@@ -314,19 +313,26 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Ar Rabwah,Riyadh,Saudi Arabia"
+                        android:text="@string/ar_rabwah_riyadh_saudi_arabia"
                         android:textColor="#333333"
                         android:textSize="14sp"
                         app:layout_constraintTop_toBottomOf="@id/tvBranchLocation" />
 
-
-                    <ImageView
-                        android:id="@+id/ivMap"
-                        android:layout_width="wrap_content"
-                        android:layout_height="200dp"
-                        android:src="@drawable/map"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvGoogleMapId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        app:cardCornerRadius="14dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvBranchLocationAddress" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvBranchLocationAddress">
+
+                        <fragment
+                            android:id="@+id/googleMapId"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="160dp" />
+                    </androidx.cardview.widget.CardView>
 
 
                     <TextView
@@ -334,11 +340,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Working Hours"
+                        android:text="@string/working_hours"
                         android:textColor="#333333"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        app:layout_constraintTop_toBottomOf="@id/ivMap" />
+                        app:layout_constraintTop_toBottomOf="@id/cvGoogleMapId" />
 
                     <TextView
                         android:id="@+id/tvSunday"

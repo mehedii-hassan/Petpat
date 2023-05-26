@@ -10,14 +10,20 @@ import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentBranchDetailsBinding
-import com.example.petpatandroidappdemo.databinding.RvServicesItemDesignBinding
 import com.example.petpatandroidappdemo.ui.adapters.ProductsAdapter
 import com.example.petpatandroidappdemo.ui.adapters.ReviewAndRatingAdapter
 import com.example.petpatandroidappdemo.ui.adapters.ServicesAdapter
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
-class BranchDetailsFragment : Fragment() {
+class BranchDetailsFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var binding: FragmentBranchDetailsBinding
+    private lateinit var mMap: GoogleMap
 
 
     override fun onCreateView(
@@ -26,7 +32,13 @@ class BranchDetailsFragment : Fragment() {
     ): View {
         // Initialization-----------------
         binding = FragmentBranchDetailsBinding.inflate(inflater, container, false)
+
+        val mapFragment = childFragmentManager
+            .findFragmentById(R.id.googleMapId) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -68,6 +80,22 @@ class BranchDetailsFragment : Fragment() {
         sliderList.add(SlideModel(R.drawable.slider_img, ScaleTypes.FIT))
         sliderList.add(SlideModel(R.drawable.slider_img, ScaleTypes.FIT))
         binding.imageSlider.setImageList(sliderList, ScaleTypes.FIT)
+
+
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+
+        mMap = googleMap
+
+        // Add a marker in Sydney and move the camera
+        val sydney = LatLng(-34.0, 151.0)
+        mMap.addMarker(
+            MarkerOptions()
+                .position(sydney)
+                .title("Marker in Sydney")
+        )
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
 
 
     }
