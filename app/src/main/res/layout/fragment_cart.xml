@@ -1,48 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.fragments.CartFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="15dp">
+        android:layout_height="match_parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent"
+            android:padding="15dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                app:layout_constraintTop_toTopOf="parent">
 
 
-            <ImageView
-                android:id="@+id/ivLeft"
-                android:layout_width="24dp"
-                android:layout_height="25dp"
-                android:src="@drawable/arrow_left"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="#040D1B" />
+                <ImageView
+                    android:id="@+id/ivLeft"
+                    android:layout_width="24dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/arrow_left"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#040D1B" />
+
+                <TextView
+                    android:id="@+id/tvCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cart"
+                    android:textColor="#040D1B"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/tvCart"
+                android:id="@+id/tvLusciousLocks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cart"
+                android:layout_marginTop="32dp"
+                android:text="@string/luscious_locks"
                 android:textColor="#040D1B"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/clId"
+                app:layout_constraintTop_toBottomOf="@+id/clId" />
 
+            <TextView
+                android:id="@+id/tvLusciousLocksAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Court Street, Alabama"
+                android:textColor="#040D1B"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tvLusciousLocks"
+                app:layout_constraintTop_toBottomOf="@+id/tvLusciousLocks" />
+
+            <TextView
+                android:id="@+id/tvServices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/services"
+                android:textColor="#040D1B"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tvLusciousLocksAddress"
+                app:layout_constraintTop_toBottomOf="@+id/tvLusciousLocksAddress" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvServicesCartFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/tvServices" />
+
+            <TextView
+                android:id="@+id/tvProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/product"
+                android:textColor="#040D1B"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/rvServicesCartFragment"
+                app:layout_constraintTop_toBottomOf="@+id/rvServicesCartFragment" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProductCartFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/tvProduct"
+                tools:layout_editor_absoluteX="15dp" />
+
+
+            <TextView
+                android:id="@+id/tvSubtotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/subtotal"
+                android:textColor="#7D8797"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/rvProductCartFragment"
+                app:layout_constraintTop_toBottomOf="@+id/rvProductCartFragment" />
+
+            <TextView
+                android:id="@+id/tvSR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SR 101"
+                android:textColor="#040D1B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvSubtotal" />
+
+            <TextView
+                android:id="@+id/tvVAT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/vat"
+                android:textColor="#7D8797"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/tvSubtotal"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtotal" />
+
+            <TextView
+                android:id="@+id/tvSRTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SR 10"
+                android:textColor="#040D1B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvVAT" />
+
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="49dp"
+                android:text="@string/total"
+                android:textColor="#040D1B"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/tvVAT"
+                app:layout_constraintTop_toBottomOf="@+id/tvVAT" />
+
+            <TextView
+                android:id="@+id/tvSRThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SR 120.00"
+                android:textColor="#040D1B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvTotal" />
+
+            <TextView
+                android:id="@+id/tvCheckout"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/add_to_cart_background_design"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/checkout"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/tvTotal" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>
+</ScrollView>

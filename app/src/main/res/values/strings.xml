@@ -39,5 +39,11 @@
     <string name="ar_rabwah_riyadh_saudi_arabia">Ar Rabwah,Riyadh,Saudi Arabia</string>
     <string name="working_hours">Working Hours</string>
     <string name="car_details">Car details</string>
+    <string name="court_street_alabama">Court Street, Alabama</string>
+    <string name="product">Product</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="vat">VAT</string>
+    <string name="total">Total</string>
+    <string name="checkout">Checkout</string>
 
 </resources>
