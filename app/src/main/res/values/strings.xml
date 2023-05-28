@@ -45,5 +45,8 @@
     <string name="vat">VAT</string>
     <string name="total">Total</string>
     <string name="checkout">Checkout</string>
+    <string name="are_you_sure_logout">Are you sure Logout?</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes_logout">Yes, Logout</string>
 
 </resources>

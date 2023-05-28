@@ -13,6 +13,7 @@ import com.example.petpatandroidappdemo.databinding.FragmentBranchDetailsBinding
 import com.example.petpatandroidappdemo.ui.adapters.ProductsAdapter
 import com.example.petpatandroidappdemo.ui.adapters.ReviewAndRatingAdapter
 import com.example.petpatandroidappdemo.ui.adapters.ServicesAdapter
+import com.example.petpatandroidappdemo.ui.fragments.dialogfragments.ExitDialogFragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -37,9 +38,16 @@ class BranchDetailsFragment : Fragment(), OnMapReadyCallback {
             .findFragmentById(R.id.googleMapId) as SupportMapFragment
         mapFragment.getMapAsync(this)
 
+        binding.tvOpen.setOnClickListener {
+            // Inside your activity or fragment
+            val dialogFragment = ExitDialogFragment()
+            dialogFragment.show(parentFragmentManager, "CustomDialogFragment")
+
+        }
         return binding.root
 
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val servicesList = ArrayList<Int>()
@@ -73,6 +81,7 @@ class BranchDetailsFragment : Fragment(), OnMapReadyCallback {
 
         //imageSlider----------------------
         val sliderList = ArrayList<SlideModel>() // Create image list
+
 
 
         sliderList.add(SlideModel(R.drawable.slider_img, ScaleTypes.FIT))
