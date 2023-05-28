@@ -14,6 +14,7 @@ import com.example.petpatandroidappdemo.ui.adapters.ProductsAdapter
 import com.example.petpatandroidappdemo.ui.adapters.ReviewAndRatingAdapter
 import com.example.petpatandroidappdemo.ui.adapters.ServicesAdapter
 import com.example.petpatandroidappdemo.ui.fragments.dialogfragments.ExitDialogFragment
+import com.example.petpatandroidappdemo.ui.fragments.dialogfragments.OrderDetailsDialogFragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -40,8 +41,12 @@ class BranchDetailsFragment : Fragment(), OnMapReadyCallback {
 
         binding.tvOpen.setOnClickListener {
             // Inside your activity or fragment
-            val dialogFragment = ExitDialogFragment()
+            //val dialogFragment = ExitDialogFragment()
+            // dialogFragment.show(parentFragmentManager, "CustomDialogFragment")
+
+            val dialogFragment = OrderDetailsDialogFragment()
             dialogFragment.show(parentFragmentManager, "CustomDialogFragment")
+
 
         }
         return binding.root

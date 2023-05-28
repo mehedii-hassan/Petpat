@@ -48,5 +48,9 @@
     <string name="are_you_sure_logout">Are you sure Logout?</string>
     <string name="cancel">Cancel</string>
     <string name="yes_logout">Yes, Logout</string>
+    <string name="ashlynn_mango">Ashlynn Mango</string>
+    <string name="_05223232434">05223232434</string>
+    <string name="review_optional">Review (optional)</string>
+    <string name="submit">Submit</string>
 
 </resources>
