@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/branchDetailsFragment">
+    app:startDestination="@id/createNewServiceFragment">
 
     <fragment
         android:id="@+id/branchDetailsFragment"
@@ -20,4 +20,10 @@
         android:name="com.example.petpatandroidappdemo.ui.fragments.CarDetailsFragment"
         android:label="CarDetailsFragment"
         tools:layout="@layout/fragment_car_details" />
+    <fragment
+        android:id="@+id/createNewServiceFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.CreateNewServicesFragment"
+        android:label="CreateNewServiceFragment"
+        tools:layout="@layout/fragment_create_new_services" />
+
 </navigation>
