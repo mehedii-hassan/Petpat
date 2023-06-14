@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.example.petpatandroidappdemo.R
@@ -95,6 +97,27 @@ class BranchDetailsFragment : Fragment(), OnMapReadyCallback {
         sliderList.add(SlideModel(R.drawable.slider_img, ScaleTypes.FIT))
         binding.imageSlider.setImageList(sliderList, ScaleTypes.FIT)
 
+        // Add swipe-to-delete functionality
+        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
+            0,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                // Not used in this example, so return false
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                val position = viewHolder.adapterPosition
+                servicesList.removeAt(position)
+                servicesAdapter.notifyItemRemoved(position)
+            }
+        })
+        itemTouchHelper.attachToRecyclerView(binding.rvServices)
 
     }
 
