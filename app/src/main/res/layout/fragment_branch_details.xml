@@ -30,7 +30,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.constraintlayout.widget.Guideline
-                        android:id="@+id/glTop"
+                        android:id="@+id/glOne"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -70,7 +70,7 @@
                         android:id="@+id/clTopId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/glTop">
+                        app:layout_constraintTop_toBottomOf="@+id/glOne">
 
 
                         <ImageView
