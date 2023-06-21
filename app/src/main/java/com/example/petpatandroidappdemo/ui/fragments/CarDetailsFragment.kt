@@ -11,9 +11,9 @@ import com.denzcoskun.imageslider.models.SlideModel
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentBranchDetailsBinding
 import com.example.petpatandroidappdemo.databinding.FragmentCarDetailsBinding
-import com.example.petpatandroidappdemo.ui.adapters.ProductsAdapter
-import com.example.petpatandroidappdemo.ui.adapters.ReviewAndRatingAdapter
-import com.example.petpatandroidappdemo.ui.adapters.ServicesAdapter
+import com.example.petpatandroidappdemo.adapters.ProductsAdapter
+import com.example.petpatandroidappdemo.adapters.ReviewAndRatingAdapter
+import com.example.petpatandroidappdemo.adapters.ServicesAdapter
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback

@@ -11,8 +11,8 @@ import com.denzcoskun.imageslider.models.SlideModel
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentBranchDetailsBinding
 import com.example.petpatandroidappdemo.databinding.FragmentServiceDetailsBinding
-import com.example.petpatandroidappdemo.ui.adapters.BeautyServiceAdapter
-import com.example.petpatandroidappdemo.ui.adapters.ServicesAdapter
+import com.example.petpatandroidappdemo.adapters.BeautyServiceAdapter
+import com.example.petpatandroidappdemo.adapters.ServicesAdapter
 
 
 class ServiceDetailsFragment : Fragment() {

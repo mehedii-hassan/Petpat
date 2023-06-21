@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_service_management_nav_graph"
+    app:startDestination="@id/manageServicesFragment">
+
+    <fragment
+        android:id="@+id/manageServicesFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.ManageServicesFragment"
+        android:label="ManageServicesFragment"
+        tools:layout="@layout/rv_manage_services_item_design" />
+</navigation>

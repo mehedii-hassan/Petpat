@@ -10,6 +10,7 @@
         android:id="@+id/topContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         app:cardBackgroundColor="#E4E4E4"
         app:cardCornerRadius="15dp"
         app:cardElevation="0dp">
@@ -96,7 +97,7 @@
                 android:id="@+id/cvTrash"
                 android:layout_width="80dp"
                 android:layout_height="0dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:cardBackgroundColor="#FFF3F3"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="0dp"

@@ -1,4 +1,4 @@
-package com.example.petpatandroidappdemo.ui.adapters
+package com.example.petpatandroidappdemo.adapters
 
 import android.view.LayoutInflater
 import android.view.View
