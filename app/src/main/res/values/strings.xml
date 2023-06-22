@@ -53,5 +53,8 @@
     <string name="review_optional">Review (optional)</string>
     <string name="submit">Submit</string>
     <string name="show_bottomshit_dialog">Show Bottomshit Dialog</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
 
 </resources>

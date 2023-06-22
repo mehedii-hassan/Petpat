@@ -17,10 +17,10 @@
         android:theme="@style/Theme.PetpatAndroidAppDemo"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activities.BranchDetailsActivity"
+            android:name=".ui.activities.BottomShitdialogOpenTestActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.BottomShitdialogOpenTestActivity"
+            android:name=".ui.activities.BranchDetailsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
