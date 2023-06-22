@@ -52,5 +52,6 @@
     <string name="_05223232434">05223232434</string>
     <string name="review_optional">Review (optional)</string>
     <string name="submit">Submit</string>
+    <string name="show_bottomshit_dialog">Show Bottomshit Dialog</string>
 
 </resources>

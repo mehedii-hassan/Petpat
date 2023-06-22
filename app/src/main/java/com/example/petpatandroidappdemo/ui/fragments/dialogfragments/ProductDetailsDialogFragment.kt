@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.petpatandroidappdemo.R
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
-class ProductDetailsDialogFragment : DialogFragment() {
+class ProductDetailsDialogFragment : BottomSheetDialogFragment() {
 
 
 
