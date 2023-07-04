@@ -6,39 +6,35 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.example.petpatandroidappdemo.databinding.RvAddProductItemDesignBinding
 import com.example.petpatandroidappdemo.databinding.RvBeautyServiceItemBinding
 import com.example.petpatandroidappdemo.databinding.RvManageServicesItemDesignBinding
 import com.example.petpatandroidappdemo.databinding.RvProductsItemDesignBinding
 import com.example.petpatandroidappdemo.databinding.RvReviewItemDesignBinding
 import com.example.petpatandroidappdemo.databinding.RvServicesItemDesignBinding
 
-class MyServicesAdapter(private val list: ArrayList<Int>) :
-    RecyclerView.Adapter<MyServicesAdapter.MyServiceViewHolder>() {
+class AddProductAdapter(private val list: ArrayList<Int>) :
+    RecyclerView.Adapter<AddProductAdapter.AddProductViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyServiceViewHolder {
-        val binding = RvManageServicesItemDesignBinding
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddProductViewHolder {
+        val binding = RvAddProductItemDesignBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyServiceViewHolder(binding)
+        return AddProductViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
         return list.size
     }
 
-    fun deleteItem(position: Int) {
-        list.removeAt(position)
-        notifyItemRemoved(position)
-    }
 
-
-    override fun onBindViewHolder(holder: MyServiceViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AddProductViewHolder, position: Int) {
 
 
     }
 
 
-    inner class MyServiceViewHolder(val binding: RvManageServicesItemDesignBinding) :
+    inner class AddProductViewHolder(val binding: RvAddProductItemDesignBinding) :
         ViewHolder(binding.root) {
 
     }
