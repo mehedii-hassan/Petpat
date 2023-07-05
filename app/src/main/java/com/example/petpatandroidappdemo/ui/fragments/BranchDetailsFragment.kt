@@ -17,6 +17,7 @@ import com.example.petpatandroidappdemo.adapters.ReviewAndRatingAdapter
 import com.example.petpatandroidappdemo.adapters.ServicesAdapter
 import com.example.petpatandroidappdemo.ui.fragments.dialogfragments.ExitDialogFragment
 import com.example.petpatandroidappdemo.ui.fragments.dialogfragments.OrderDetailsDialogFragment
+import com.example.petpatandroidappdemo.ui.fragments.dialogfragments.OrderPlacedPopUpDialogFragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -42,13 +43,14 @@ class BranchDetailsFragment : Fragment(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         binding.tvOpen.setOnClickListener {
-            // Inside your activity or fragment
-            //val dialogFragment = ExitDialogFragment()
-            // dialogFragment.show(parentFragmentManager, "CustomDialogFragment")
 
-            val dialogFragment = OrderDetailsDialogFragment()
+           /* val dialogFragment = ExitDialogFragment()
             dialogFragment.show(parentFragmentManager, "CustomDialogFragment")
-
+*/
+            /*val dialogFragment = OrderDetailsDialogFragment()
+            dialogFragment.show(parentFragmentManager, "CustomDialogFragment")*/
+            val dialogFragment = OrderPlacedPopUpDialogFragment()
+            dialogFragment.show(parentFragmentManager, "CustomDialogFragment")
 
         }
         return binding.root

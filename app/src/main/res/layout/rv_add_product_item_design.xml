@@ -7,8 +7,8 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="70dp"
-        android:layout_height="70dp">
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_70sdp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvUploadContainer"
@@ -28,6 +28,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/arrow_upload" />
         </androidx.cardview.widget.CardView>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clUploadContainer"
@@ -68,6 +69,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
+                        android:id="@+id/ivUploadOne"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:scaleType="centerCrop"

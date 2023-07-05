@@ -10,4 +10,9 @@
         android:name="com.example.petpatandroidappdemo.ui.fragments.AddProductFragment"
         android:label="fragment_add_product"
         tools:layout="@layout/fragment_add_product" />
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.GalleryFragment"
+        android:label="GalleryFragment"
+        tools:layout="@layout/fragment_gallery" />
 </navigation>
