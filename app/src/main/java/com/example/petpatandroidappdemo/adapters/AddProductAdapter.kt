@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.callbacks.AddProductItemSelectListener
+import com.example.petpatandroidappdemo.callbacks.CrossBtnClickDeleteListener
 import com.example.petpatandroidappdemo.databinding.RvAddProductItemDesignBinding
 import com.example.petpatandroidappdemo.databinding.RvBeautyServiceItemBinding
 import com.example.petpatandroidappdemo.databinding.RvManageServicesItemDesignBinding
@@ -22,6 +23,7 @@ import com.example.petpatandroidappdemo.ui.fragments.dialogfragments.UploadOptio
 class AddProductAdapter(private val list: ArrayList<Int>, fragment: Fragment) :
     RecyclerView.Adapter<AddProductAdapter.AddProductViewHolder>() {
     private val itemClickListener = fragment as AddProductItemSelectListener
+    private val crossBtnClickDeleteListener = fragment as CrossBtnClickDeleteListener
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddProductViewHolder {
@@ -50,8 +52,11 @@ class AddProductAdapter(private val list: ArrayList<Int>, fragment: Fragment) :
 
             binding.ivUpload.setOnClickListener {
                 itemClickListener.getAddProductItemPosition(position, binding)
-
             }
+            binding.ivDelete.setOnClickListener {
+                crossBtnClickDeleteListener.onCrossBtnClickDeleteListener(binding)
+            }
+
         }
     }
 
