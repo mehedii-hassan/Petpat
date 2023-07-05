@@ -9,7 +9,6 @@
     tools:context=".ui.fragments.dialogfragments.OrderPlacedPopUpDialogFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/Custom_order_placed_dialog_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
