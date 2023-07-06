@@ -1,5 +1,8 @@
 <resources>
 
+
+    <!--photos api key-->
+    <string name="PHOTOS_API_KEY">dYQu5f_7Vy3UjqxRlZZx7Kh7uqYQfHlkVd_CHhNFvQw-qYU6c</string>
     <!--map api key-->
     <string name="API_KEY">AIzaSyA5lNyJH60fIJ_u5VLxFrBPZRx7A-qYU6c</string>
     <string name="app_name">PetpatAndroidAppDemo</string>

@@ -7,27 +7,8 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="@dimen/_70sdp"
-        android:layout_height="@dimen/_70sdp">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cvUploadContainer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            app:cardCornerRadius="60dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/ivUpload"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/arrow_upload" />
-        </androidx.cardview.widget.CardView>
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_65sdp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,8 +51,8 @@
 
                     <ImageView
                         android:id="@+id/ivUploadOne"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/dog_img" />
                 </androidx.cardview.widget.CardView>
@@ -90,5 +71,25 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvUploadContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:cardCornerRadius="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivUpload"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/arrow_upload" />
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

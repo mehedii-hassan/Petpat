@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="_10dp">10dp</dimen>
-    <dimen name="_70sdp">70dp</dimen>
+    <dimen name="_60sdp">60dp</dimen>
+    <dimen name="_65sdp">65dp</dimen>
+    <dimen name="_50sdp">50dp</dimen>
+    <dimen name="_55sdp">55dp</dimen>
+    <dimen name="_40sdp">40dp</dimen>
 </resources>

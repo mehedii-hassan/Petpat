@@ -6,20 +6,17 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.petpatandroidappdemo.R
-import com.example.petpatandroidappdemo.callbacks.AddProductItemSelectListener
 import com.example.petpatandroidappdemo.callbacks.OptionDialogDismissListener
-import com.example.petpatandroidappdemo.databinding.FragmentUploadOptionDialogBinding
+import com.example.petpatandroidappdemo.databinding.FragmentImageUploadOptionDialogBinding
 import com.example.petpatandroidappdemo.databinding.RvAddProductItemDesignBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
-class UploadOptionDialogFragment(
+class ImageUploadOptionDialogFragment(
     private val binding_: RvAddProductItemDesignBinding,
     fragment: Fragment
 ) :
@@ -27,16 +24,16 @@ class UploadOptionDialogFragment(
 
     private val dialogDismissListener = fragment as OptionDialogDismissListener
 
-    private lateinit var binding: FragmentUploadOptionDialogBinding
+    private lateinit var binding: FragmentImageUploadOptionDialogBinding
     private val PICK_IMAGE_REQUEST = 1
-    private val REQUEST_IMAGE_CAPTURE = 1
+    private val REQUEST_IMAGE_CAPTURE = 2
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentUploadOptionDialogBinding.inflate(inflater, container, false)
+        binding = FragmentImageUploadOptionDialogBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -72,6 +69,7 @@ class UploadOptionDialogFragment(
             binding_.cvUploadContainer.visibility = View.GONE
             binding_.clUploadContainer.visibility = View.VISIBLE
             dialogDismissListener.dismissOptiondialog()
+
         }
 
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
