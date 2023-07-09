@@ -5,7 +5,7 @@ import com.example.petpatandroidappdemo.R
 object Constants {
 
 
-    val PHOTOS_API_KEY = "dYQu5f_7Vy3UjqxRlZZx7Kh7uqYQfHlkVd_CHhNFvQw"
+    const val PHOTOS_API_KEY = "dYQu5f_7Vy3UjqxRlZZx7Kh7uqYQfHlkVd_CHhNFvQw"
 
     fun imageList(): ArrayList<Int> {
         val imageList = ArrayList<Int>()

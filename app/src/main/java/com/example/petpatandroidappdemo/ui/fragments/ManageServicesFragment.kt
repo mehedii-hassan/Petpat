@@ -11,15 +11,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentManageServicesBinding
 import com.example.petpatandroidappdemo.adapters.MyServicesAdapter
+import com.example.petpatandroidappdemo.callbacks.ManageServicesItemClickListener
+import com.example.petpatandroidappdemo.databinding.RvManageServicesItemDesignBinding
 
 
-class ManageServicesFragment : Fragment() {
+class ManageServicesFragment : Fragment(), ManageServicesItemClickListener {
 
 
     private lateinit var binding: FragmentManageServicesBinding
@@ -45,7 +48,7 @@ class ManageServicesFragment : Fragment() {
         servicesList.add(R.drawable.image)
         servicesList.add(R.drawable.image)
 
-        adapter = MyServicesAdapter(servicesList)
+        adapter = MyServicesAdapter(servicesList, this)
         binding.rvManageServices.layoutManager = LinearLayoutManager(view.context)
         binding.rvManageServices.adapter = adapter
         // binding.rvManageServices.setListener(this)
@@ -137,6 +140,29 @@ class ManageServicesFragment : Fragment() {
         itemTouchHelper.attachToRecyclerView(binding.rvManageServices)
 
     }
+
+    override fun getManageServicesItemDesignBindingInstance(
+        position: Int,
+        binding: RvManageServicesItemDesignBinding
+    ) {
+        binding.tvProfessional.setOnClickListener {
+            //itemClickListener.getManageServicesAdapterPosition(position, binding)
+            Navigation.findNavController(it).navigate(R.id.blankFragment4)
+        }
+        binding.cvItemServices.setOnClickListener {
+
+            // itemClickListener.getManageServicesAdapterPosition(position, binding)
+
+            Navigation.findNavController(it).navigate(R.id.blankFragment4)
+
+        }
+    }
+
+    override fun getManageServicesAdapterPosition(position: Int) {
+        Navigation.findNavController(requireView()).navigate(R.id.blankFragment4)
+
+    }
+
 
     /* @SuppressLint("NotifyDataSetChanged")
      override fun onSwipedLeft(position: Int) {

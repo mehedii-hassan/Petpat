@@ -3,7 +3,7 @@ package com.example.petpatandroidappdemo.network;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitService {
+public class RetrofitService_ {
 
     public static Retrofit retrofit =null;
     public static PhotoServiceApi getService(){

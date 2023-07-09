@@ -10,4 +10,9 @@
         android:name="com.example.petpatandroidappdemo.ui.fragments.ManageServicesFragment"
         android:label="ManageServicesFragment"
         tools:layout="@layout/rv_manage_services_item_design" />
+    <fragment
+        android:id="@+id/blankFragment4"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.BlankFragment4"
+        android:label="fragment_blank4"
+        tools:layout="@layout/fragment_blank4" />
 </navigation>
