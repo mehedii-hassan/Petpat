@@ -1,5 +1,5 @@
 package com.example.petpatandroidappdemo.models.gallery
 
-data class Nature(
+data class Travel(
     val status: String
 )

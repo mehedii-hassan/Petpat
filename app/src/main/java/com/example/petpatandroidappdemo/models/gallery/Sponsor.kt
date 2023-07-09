@@ -9,7 +9,7 @@ data class Sponsor(
     val instagram_username: String,
     val last_name: Any,
     val links: LinksX,
-    val location: String,
+    val location: Any,
     val name: String,
     val portfolio_url: String,
     val profile_image: ProfileImage,

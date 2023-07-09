@@ -7,17 +7,20 @@ object ApiClient {
 
     fun getService(): PhotoServiceApi {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.unsplash.com/photos/")
+            .baseUrl("https://api.unsplash.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         return retrofit.create(PhotoServiceApi::class.java)
     }
-    /* public static PhotoServiceApi getService() {
-        final Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.unsplash.com/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
 
-        return retrofit.create(PhotoServiceApi.class);
-    }*/
+  /*  val retrofit = Retrofit.Builder()
+        .baseUrl("https://api.unsplash.com/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+
+
+    val service = retrofit.create(PhotoServiceApi::class.java)
+*/
+
 }

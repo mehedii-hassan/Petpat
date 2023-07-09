@@ -1,6 +1,6 @@
 package com.example.petpatandroidappdemo.models.gallery
 
-data class PhotoModelItem(
+data class PhotoModlItem(
     val alt_description: String,
     val blur_hash: String,
     val color: String,
