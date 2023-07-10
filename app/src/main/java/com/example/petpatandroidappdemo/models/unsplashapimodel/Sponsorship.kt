@@ -1,4 +1,4 @@
-package com.example.petpatandroidappdemo.models.gallery
+package com.example.petpatandroidappdemo.models.unsplashapimodel
 
 data class Sponsorship(
     val impression_urls: List<String>,

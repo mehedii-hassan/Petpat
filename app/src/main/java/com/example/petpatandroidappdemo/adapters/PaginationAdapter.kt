@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.petpatandroidappdemo.databinding.RvGalleryItemDesignBinding
-import com.example.petpatandroidappdemo.models.gallery.PhotoModel
+import com.example.petpatandroidappdemo.models.unsplashapimodel.PhotoModel
 import com.squareup.picasso.Picasso
 
 class PaginationAdapter(private var list: List<PhotoModel>) :

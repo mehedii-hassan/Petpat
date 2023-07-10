@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import com.example.petpatandroidappdemo.adapters.PaginationAdapter
 import com.example.petpatandroidappdemo.databinding.FragmentPaginationBinding
-import com.example.petpatandroidappdemo.models.gallery.PhotoModel
+import com.example.petpatandroidappdemo.models.unsplashapimodel.PhotoModel
 import com.example.petpatandroidappdemo.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -21,12 +21,14 @@ import retrofit2.Response
 class PaginationFragment : Fragment() {
 
 
-    private val page = 1
-    private val pageSize = 30
+    private var page = 1
+    private var perPage = 10
     private val imageList = mutableListOf<PhotoModel>()
     private lateinit var adapter: PaginationAdapter
     private lateinit var binding: FragmentPaginationBinding
+    private lateinit var gridLayoutManager: GridLayoutManager
     private var temp = 0
+    private var count = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,17 +36,20 @@ class PaginationFragment : Fragment() {
         // Inflate the layout for this fragment
 
         binding = FragmentPaginationBinding.inflate(inflater, container, false)
+        gridLayoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
 
+
+        binding.progressBarId.visibility = View.VISIBLE
 
 
         adapter = PaginationAdapter(imageList)
-        binding.rvPagination.layoutManager =
-            GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
+        binding.rvPagination.layoutManager = gridLayoutManager
         binding.rvPagination.adapter = adapter
 
         if (temp == 0) {
 
-            getData()
+            Log.e("TAG", "before Count")
+            getData(page, perPage)
         }
         binding.rvPagination.addOnScrollListener(object : OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
@@ -54,17 +59,22 @@ class PaginationFragment : Fragment() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                temp = 1
-                val visibleItemCount =
-                    (binding.rvPagination.layoutManager as GridLayoutManager).childCount
-                val totalItemCount =
-                    (binding.rvPagination.layoutManager as GridLayoutManager).itemCount
-                val firstVisibleItemPosition =
-                    (binding.rvPagination.layoutManager as GridLayoutManager).findFirstVisibleItemPosition()
+                val visibleItemCount = gridLayoutManager.childCount
+                val totalItemCount = gridLayoutManager.itemCount
+                val firstVisibleItemPosition = gridLayoutManager.findFirstVisibleItemPosition()
+
+                Log.e(
+                    "TAG",
+                    "vItem =${visibleItemCount} tItem =${totalItemCount} fPosition =${firstVisibleItemPosition} "
+                )
 
                 if (visibleItemCount + firstVisibleItemPosition >= totalItemCount && firstVisibleItemPosition >= 0) {
                     // Load more data
-                    getData()
+                    binding.progressBarId.visibility = View.VISIBLE
+                    count++
+                    page++
+                    getData(page, perPage)
+                    Log.e("TAG", "Count =${count}")
                 }
             }
         })
@@ -72,27 +82,33 @@ class PaginationFragment : Fragment() {
         return binding.root
     }
 
-    fun getData() {
+    fun getData(page: Int, perPage: Int) {
 
-        ApiClient.getService().getImages(page, 10).enqueue(object : Callback<List<PhotoModel>> {
-            override fun onResponse(
-                call: Call<List<PhotoModel>>,
-                response: Response<List<PhotoModel>>
-            ) {
+        ApiClient.getService().getImages(page, perPage)
+            .enqueue(object : Callback<List<PhotoModel>> {
+                override fun onResponse(
+                    call: Call<List<PhotoModel>>,
+                    response: Response<List<PhotoModel>>
+                ) {
 
-                if (response.body() != null) {
-                    imageList.addAll(response.body()!!)
-                    adapter.submitNewImageList(imageList)
+                    binding.progressBarId.visibility = View.VISIBLE
+
+
+                    if (response.body() != null) {
+                        imageList.addAll(response.body()!!)
+                        adapter.submitNewImageList(imageList)
+                        binding.progressBarId.visibility = View.GONE
+
+                    }
+                    Log.e("TAG", "size= ${imageList.size} count =${count}")
+                    Toast.makeText(context, "" + imageList.size, Toast.LENGTH_LONG).show()
+
                 }
-                Log.e("TAG", "size= ${imageList.size}")
-                Toast.makeText(context, "" + imageList.size, Toast.LENGTH_LONG).show()
 
-            }
-
-            override fun onFailure(call: Call<List<PhotoModel>>, t: Throwable) {
-                Log.e("TAG", "failed ${t.localizedMessage}")
-            }
-        })
+                override fun onFailure(call: Call<List<PhotoModel>>, t: Throwable) {
+                    Log.e("TAG", "failed ${t.localizedMessage}")
+                }
+            })
 
     }
 

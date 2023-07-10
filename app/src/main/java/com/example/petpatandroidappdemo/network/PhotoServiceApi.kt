@@ -1,6 +1,6 @@
 package com.example.petpatandroidappdemo.network
 
-import com.example.petpatandroidappdemo.models.gallery.PhotoModel
+import com.example.petpatandroidappdemo.models.unsplashapimodel.PhotoModel
 import com.example.petpatandroidappdemo.utils.Constants
 import retrofit2.Call
 import retrofit2.http.GET
