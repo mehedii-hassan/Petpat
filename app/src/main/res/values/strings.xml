@@ -61,4 +61,99 @@
     <string name="friday">Friday</string>
 
 
+    <!--English-->
+    <!--Home, Search & Filter section start -->
+    <string name="tvExplore">Explore</string>
+    <string name="tvOurServices">Our Services</string>
+    <string name="tvTopRated">Top Rated</string>
+    <string name="tvSeeAll">See all</string>
+    <string name="tvNewest">Newest</string>
+    <string name="tvExploreBS">Explore</string>
+    <string name="tvFavouritesBS">Favourites</string>
+    <string name="tvOrdersBS">Orders</string>
+    <string name="tvAccountsBS">Accounts</string>
+    <string name="tvSelectYourLocation">Select your location</string>
+    <string name="tvMap">Map</string>
+    <string name="tvFilter">Filter</string>
+    <string name="tvReset">Reset</string>
+    <string name="tvHowToProvideTheService">How to provide the service</string>
+    <string name="tvBranch">Branch</string>
+    <string name="tvCar">Car</string>
+    <string name="tvFilterByRatings">Filter by ratings</string>
+    <string name="tvServices">Services</string>
+    <string name="btnApply">Apply</string>
+    <!--Home, Search & Filter section end -->
+
+    <!--Forget & reset password section start -->
+    <string name="tvForgotPassword">Forgot Password</string>
+    <string name="tvForgotPasswordDesc">Please enter your phone no. so we can help you recover your password</string>
+    <string name="tvPhoneNumber">Phone number</string>
+    <string name="tvSend">Send</string>
+    <string name="tvVerification">Verification</string>
+    <string name="tvVerificationDesc">Enter your OTP code from your phone we just sent you.</string>
+    <string name="tvResendIn">Resend in</string>
+    <string name="tvContinue">Continue</string>
+    <string name="tvResetPassword">Reset Password</string>
+    <string name="tvResetPasswordDesc"> Enter your new password &amp; confirm it</string>
+    <string name="tvNewPassword">New Password</string>
+    <string name="tvConfirmNewPassword">Confirm New Password</string>
+    <string name="btnConfirm">Confirm</string>
+    <!--Forget & reset password section end -->
+
+
+    <!--Notification, Rate & Archives section start -->
+    <string name="tvNotifications">Notifications</string>
+    <string name="tvPrevious">Previous</string>
+    <string name="btnSubmit">Submit</string>
+    <string name="tvFavourites">Favourites</string>
+    <string name="tvFavouritesDesc">There is no favourite list yet. You can Log in or Register to add favourite SP here.</string>
+    <string name="btnLogIn">Log In</string>
+    <string name="btnRegister">Register</string>
+    <!--Notification, Rate & Archives section end -->
+
+
+    <!--Checkout section start -->
+    <string name="tvCart">Cart</string>
+    <string name="tvLusciousLocks">Luscious Locks</string>
+    <string name="tvChooseDate">Choose a Date</string>
+    <string name="tvChoosePreferredTime">Choose a preferred time</string>
+    <string name="btnMorning">Morning</string>
+    <string name="btnDay">Day</string>
+    <string name="btnNight">Night</string>
+    <string name="tvBranchLocation">Branch Location</string>
+    <string name="tvAddNote">Add a Note</string>
+    <string name="btnAdd">Add</string>
+    <string name="tvOrderSummary">Order Summary</string>
+    <string name="tvProduct">Product</string>
+    <string name="tvSubtotal">Subtotal</string>
+    <string name="tvVAT">VAT</string>
+    <string name="tvTotal">Total</string>
+    <string name="btnProceedToPayments">Proceed to Payments</string>
+    <string name="tvDiscount">Discount</string>
+    <string name="tvYourOrderHasBeenPlaced">Your order has been placed !</string>
+    <string name="tvOrderId">Order ID</string>
+    <string name="btnDone">Done</string>
+    <!--Checkout section end -->
+
+
+    <!--Profile & Settings section start -->
+    <string name="tvAccounts">Accounts</string>
+    <string name="tvAccountsDesc">There is no profile yet. You can Log in or Register to add create your own profile.</string>
+    <string name="tvProfile">Profile</string>
+    <string name="tvOrdersHistory">Orders History</string>
+    <string name="tvOrdersDetails">Orders Details</string>
+    <string name="tvChangeLanguage">Change Language</string>
+    <string name="tvChangePassword">Change Password</string>
+    <string name="tvReportIssue">Report an Issue</string>
+    <string name="tvLogout">Logout</string>
+    <string name="tvUpdateProfile">Report an Issue</string>
+    <string name="tvUpdateProfileDesc">Enter your updated information</string>
+    <string name="tvFirstName">First Name</string>
+    <string name="tvLastName">Last Name</string>
+    <string name="tvPhone">Phone</string>
+    <string name="tvEmailOptional">Email (optional)</string>
+    <string name="btnUpdate">Update</string>
+    <!--Profile & Settings section end-->
+
+
 </resources>

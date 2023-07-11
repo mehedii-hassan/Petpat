@@ -6,4 +6,6 @@
     <dimen name="_50sdp">50dp</dimen>
     <dimen name="_55sdp">55dp</dimen>
     <dimen name="_40sdp">40dp</dimen>
+    <dimen name="_150sdp">150dp</dimen>
+    <dimen name="_200sdp">200dp</dimen>
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/product_management_nav_graph"
-    app:startDestination="@id/paginationFragment">
+    app:startDestination="@id/paginationFragmentTwo">
 
     <fragment
         android:id="@+id/addProductFragment"
@@ -20,4 +20,9 @@
         android:name="com.example.petpatandroidappdemo.ui.fragments.PaginationFragment"
         android:label="fragment_pagination"
         tools:layout="@layout/fragment_pagination" />
+    <fragment
+        android:id="@+id/paginationFragmentTwo"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.PaginationFragmentTwo"
+        android:label="PaginationFragmentTwo"
+        tools:layout="@layout/fragment_pagination_two"/>
 </navigation>

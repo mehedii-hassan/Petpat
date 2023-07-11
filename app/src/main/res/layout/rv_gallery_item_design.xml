@@ -14,10 +14,11 @@
         android:layout_marginEnd="1dp"
         app:cardCornerRadius="4dp">
 
+
         <ImageView
             android:id="@+id/ivGalleryItem"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_200sdp"
             android:scaleType="centerCrop"
             android:src="@drawable/dog_img" />
 

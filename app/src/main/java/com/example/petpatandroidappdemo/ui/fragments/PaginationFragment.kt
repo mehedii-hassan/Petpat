@@ -36,7 +36,7 @@ class PaginationFragment : Fragment() {
         // Inflate the layout for this fragment
 
         binding = FragmentPaginationBinding.inflate(inflater, container, false)
-        gridLayoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
+        gridLayoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
 
 
         binding.progressBarId.visibility = View.VISIBLE
@@ -68,7 +68,7 @@ class PaginationFragment : Fragment() {
                     "vItem =${visibleItemCount} tItem =${totalItemCount} fPosition =${firstVisibleItemPosition} "
                 )
 
-                if (visibleItemCount + firstVisibleItemPosition >= totalItemCount && firstVisibleItemPosition >= 0) {
+                if (visibleItemCount + firstVisibleItemPosition >= totalItemCount) {
                     // Load more data
                     binding.progressBarId.visibility = View.VISIBLE
                     count++
@@ -76,6 +76,26 @@ class PaginationFragment : Fragment() {
                     getData(page, perPage)
                     Log.e("TAG", "Count =${count}")
                 }
+                /*if (visibleItemCount + firstVisibleItemPosition >= totalItemCount && firstVisibleItemPosition >= 0) {
+                    // Load more data
+                    binding.progressBarId.visibility = View.VISIBLE
+                    count++
+                    page++
+                    getData(page, perPage)
+                    Log.e("TAG", "Count =${count}")
+                }*/
+
+
+               /* if (dy > 0) {
+                    val visibleItemCount = gridLayoutManager.childCount
+                    val totalItemCount = gridLayoutManager.itemCount
+                    val firstVisibleItemPosition = gridLayoutManager.findFirstVisibleItemPosition()
+
+                    if(visibleItemCount + firstVisibleItemPosition >= totalItemCount){
+
+                    }
+
+                }*/
             }
         })
 

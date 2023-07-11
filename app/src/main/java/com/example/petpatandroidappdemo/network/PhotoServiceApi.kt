@@ -9,7 +9,6 @@ import retrofit2.http.Query
 
 interface PhotoServiceApi {
 
-
     /*@GET("/items")
     suspend fun getPhotos(): List<AddProductModel.Image>
     */
