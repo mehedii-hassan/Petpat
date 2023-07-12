@@ -153,6 +153,8 @@
     <string name="tvPhone">Phone</string>
     <string name="tvEmailOptional">Email (optional)</string>
     <string name="btnUpdate">Update</string>
+    <string name="terms_amp_conditions"> Terms &amp; Conditions</string>
+
     <!--Profile & Settings section end-->
 
 

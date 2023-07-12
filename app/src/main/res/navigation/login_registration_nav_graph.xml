@@ -16,6 +16,11 @@
         android:name="com.example.petpatandroidappdemo.ui.fragments.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register" />
 
 
 </navigation>

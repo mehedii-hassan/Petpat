@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentLoginBinding
 import com.example.petpatandroidappdemo.models.request.LoginRequestModel
@@ -51,6 +52,7 @@ class LoginFragment : Fragment() {
                 ) {
                     if (response.isSuccessful) {
                         Toast.makeText(context, "Successfully logged in", Toast.LENGTH_SHORT).show()
+                        Navigation.findNavController(requireView()).navigate(R.id.registerFragment)
 
                     }
                 }
