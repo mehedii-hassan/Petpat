@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.BranchDetailsActivity">
+    tools:context=".ui.activities.MainActivity">
 
 
     <androidx.fragment.app.FragmentContainerView
@@ -13,5 +13,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/product_management_nav_graph" />
+        app:navGraph="@navigation/login_registration_nav_graph" />
 </FrameLayout>

@@ -44,14 +44,14 @@ class BranchDetailsFragment : Fragment(), OnMapReadyCallback {
 
         binding.tvOpen.setOnClickListener {
 
-           /* val dialogFragment = ExitDialogFragment()
-            dialogFragment.show(parentFragmentManager, "CustomDialogFragment")
-*/
-            /*val dialogFragment = OrderDetailsDialogFragment()
-            dialogFragment.show(parentFragmentManager, "CustomDialogFragment")*/
-            val dialogFragment = OrderPlacedPopUpDialogFragment()
+            val dialogFragment = ExitDialogFragment()
             dialogFragment.show(parentFragmentManager, "CustomDialogFragment")
 
+            /*val dialogFragment = OrderDetailsDialogFragment()
+            dialogFragment.show(parentFragmentManager, "CustomDialogFragment")*/
+           /* val dialogFragment = OrderPlacedPopUpDialogFragment()
+            dialogFragment.show(parentFragmentManager, "CustomDialogFragment")
+*/
         }
         return binding.root
 
