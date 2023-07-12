@@ -31,14 +31,14 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnLogIn.setOnClickListener {
-
-            Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show()
             val phoneNumber = binding.etPhoneNumber.text.toString()
             val password = binding.etPassword.text.toString()
-
-
-
             userLogin(phoneNumber, password)
+        }
+
+        binding.tvRegister.setOnClickListener {
+            Navigation.findNavController(requireView()).navigate(R.id.registerFragment)
+
         }
     }
 

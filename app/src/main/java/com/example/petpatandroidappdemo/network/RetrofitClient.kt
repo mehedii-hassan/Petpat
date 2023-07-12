@@ -5,12 +5,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    fun getService(): AuthApi {
+    fun getService(): AuthServiceApi {
         val retrofit = Retrofit.Builder()
             .baseUrl("http://178.128.207.239:8010")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        return retrofit.create(AuthApi::class.java)
+        return retrofit.create(AuthServiceApi::class.java)
     }
 
 }
