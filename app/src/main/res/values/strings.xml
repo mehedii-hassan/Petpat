@@ -154,6 +154,7 @@
     <string name="tvEmailOptional">Email (optional)</string>
     <string name="btnUpdate">Update</string>
     <string name="terms_amp_conditions"> Terms &amp; Conditions</string>
+    <string name="otpMessage">Enter your OTP code from your \n    phone we just sent you.</string>
 
     <!--Profile & Settings section end-->
 
