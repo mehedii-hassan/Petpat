@@ -35,7 +35,7 @@
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
-            android:id="@+id/actionRegisterToOTPFragmentl"
+            android:id="@+id/actionRegisterToOTPFragment"
             app:destination="@id/otpFragment"
             app:popUpTo="@id/registerFragment"
             app:popUpToInclusive="true" />
@@ -44,6 +44,9 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/registerFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="model"
+            app:argType="com.example.petpatandroidappdemo.models.response.RegisterResponseModel" />
     </fragment>
     <fragment
         android:id="@+id/otpFragment"
@@ -55,6 +58,11 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/otpFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="registerRequestModel"
+            app:argType="com.example.petpatandroidappdemo.models.request.RegisterRequestModel" />
+
+
     </fragment>
 
 

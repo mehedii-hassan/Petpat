@@ -7,26 +7,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import com.denzcoskun.imageslider.animations.Toss
+import androidx.navigation.fragment.navArgs
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentOTPBinding
 import com.example.petpatandroidappdemo.models.request.OtpRequestModel
-import com.example.petpatandroidappdemo.models.response.OtpResponseModel
-import com.example.petpatandroidappdemo.network.RetrofitClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.petpatandroidappdemo.models.request.RegisterRequestModel
+import com.example.petpatandroidappdemo.viewmodels.OtpViewModel
 
 class OTPFragment : Fragment() {
 
 
     private lateinit var binding: FragmentOTPBinding
+    private lateinit var viewModel: OtpViewModel
+    private lateinit var registerRequestModel: RegisterRequestModel
+
+    // get the arguments from the Registration fragment
+    private val args: OTPFragmentArgs by navArgs()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentOTPBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(this).get(OtpViewModel::class.java)
+
+        // Receive the arguments in a variable-----------------------
+        registerRequestModel = args.registerRequestModel
+        //registerRequestModel = OTPFragmentArgs.fromBundle(arguments).registerRequestModel
+        Log.e("TAG", " ${registerRequestModel.phone}")
         return binding.root
     }
 
@@ -52,27 +62,18 @@ class OTPFragment : Fragment() {
             ).show()
             return
         }
+        val otpRequestModel = OtpRequestModel(false, otpString, registerRequestModel.phone)
 
-        RetrofitClient.getService().verifyOTP(OtpRequestModel(false, otpString, "01521321894"))
-            .enqueue(object : Callback<OtpResponseModel> {
-                override fun onResponse(
-                    call: Call<OtpResponseModel>,
-                    response: Response<OtpResponseModel>
-                ) {
-                    if (response.isSuccessful) {
-                        Toast.makeText(context, "Successfully Registered", Toast.LENGTH_SHORT)
-                            .show()
-                        Log.e("TAG", "success")
-                        Navigation.findNavController(requireView()).navigate(R.id.loginFragment)
-                    }
+        viewModel.getOtpResponseData(otpRequestModel)
 
-                }
-
-                override fun onFailure(call: Call<OtpResponseModel>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-
-            })
+        viewModel.getOtpResponseModel().observe(
+            viewLifecycleOwner
+        ) {
+            if (it.success) {
+                Toast.makeText(context, "Successfully Registered", Toast.LENGTH_SHORT)
+                    .show()
+                Navigation.findNavController(requireView()).navigate(R.id.actionOTPToLoginFragment)
+            }
+        }
     }
-
 }
