@@ -52,7 +52,8 @@ class LoginFragment : Fragment() {
                 ) {
                     if (response.isSuccessful) {
                         Toast.makeText(context, "Successfully logged in", Toast.LENGTH_SHORT).show()
-                        Navigation.findNavController(requireView()).navigate(R.id.registerFragment)
+                        Navigation.findNavController(requireView())
+                            .navigate(R.id.actionLoginToProductManagementNavGraph)
 
                     }
                 }
