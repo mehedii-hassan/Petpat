@@ -1,4 +1,4 @@
-package com.example.petpatandroidappdemo.ui.fragments
+package com.example.petpatandroidappdemo.ui.fragments.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentRegisterBinding
 import com.example.petpatandroidappdemo.models.request.RegisterRequestModel
+import com.example.petpatandroidappdemo.ui.fragments.RegisterFragmentDirections
 import com.example.petpatandroidappdemo.viewmodels.RegisterViewModel
 
 class RegisterFragment : Fragment() {

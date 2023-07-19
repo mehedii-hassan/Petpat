@@ -1,4 +1,4 @@
-package com.example.petpatandroidappdemo.network
+package com.example.petpatandroidappdemo.network.PhotoService
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

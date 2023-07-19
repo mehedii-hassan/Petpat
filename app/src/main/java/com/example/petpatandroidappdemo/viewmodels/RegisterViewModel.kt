@@ -2,13 +2,10 @@ package com.example.petpatandroidappdemo.viewmodels
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.petpatandroidappdemo.models.request.OtpRequestModel
 import com.example.petpatandroidappdemo.models.request.RegisterRequestModel
-import com.example.petpatandroidappdemo.models.response.OtpResponseModel
 import com.example.petpatandroidappdemo.models.response.RegisterResponseModel
 import com.example.petpatandroidappdemo.network.RetrofitClient
 import retrofit2.Call

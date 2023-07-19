@@ -1,4 +1,4 @@
-package com.example.petpatandroidappdemo.network
+package com.example.petpatandroidappdemo.network.PhotoService
 
 import com.example.petpatandroidappdemo.models.unsplashapimodel.PhotoModel
 import com.example.petpatandroidappdemo.utils.Constants

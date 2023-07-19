@@ -1,4 +1,4 @@
-package com.example.petpatandroidappdemo.ui.fragments
+package com.example.petpatandroidappdemo.ui.fragments.auth
 
 import android.annotation.SuppressLint
 import android.os.Bundle

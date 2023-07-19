@@ -6,10 +6,12 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.petpatandroidappdemo.callbacks.ImageUrlCallback
 import com.example.petpatandroidappdemo.callbacks.OptionDialogDismissListener
 import com.example.petpatandroidappdemo.databinding.FragmentImageUploadOptionDialogBinding
 import com.example.petpatandroidappdemo.databinding.RvAddProductItemDesignBinding
@@ -17,12 +19,14 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
 class ImageUploadOptionDialogFragment(
+    private val position: Int,
     private val binding_: RvAddProductItemDesignBinding,
     fragment: Fragment
 ) :
     BottomSheetDialogFragment() {
 
     private val dialogDismissListener = fragment as OptionDialogDismissListener
+    private val imageUrl = fragment as ImageUrlCallback
 
     private lateinit var binding: FragmentImageUploadOptionDialogBinding
     private val PICK_IMAGE_REQUEST = 1
@@ -65,6 +69,8 @@ class ImageUploadOptionDialogFragment(
         //super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
             val selectedImageUri: Uri? = data.data
+            imageUrl.getImageUrl(position, selectedImageUri.toString())
+            Log.e("TAG", "uri " + selectedImageUri.toString())
             binding_.ivUploadOne.setImageURI(selectedImageUri)
             binding_.cvUploadContainer.visibility = View.GONE
             binding_.clUploadContainer.visibility = View.VISIBLE
@@ -74,6 +80,8 @@ class ImageUploadOptionDialogFragment(
 
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             val imageBitmap = data?.extras?.get("data") as Bitmap
+            // Log.e("TAG", "uri " + selectedImageUri.toString())
+
             binding_.ivUploadOne.setImageBitmap(imageBitmap)
             binding_.cvUploadContainer.visibility = View.GONE
             binding_.clUploadContainer.visibility = View.VISIBLE

@@ -1,12 +1,10 @@
-package com.example.petpatandroidappdemo.models
+package com.example.petpatandroidappdemo.models.response
 
-data class AddProductModel(
+data class AddProductResponseModel(
     val `data`: Data,
     val message: String,
-    val success: Boolean,
-
-    ) {
-
+    val success: Boolean
+){
     data class Data(
         val id: Int,
         val images: List<Image>,
@@ -14,7 +12,6 @@ data class AddProductModel(
         val price: String,
         val product_count: Any
     )
-
     data class Image(
         val id: Int,
         val image: String

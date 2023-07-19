@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.LoginFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.auth.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.SplashScreenFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.auth.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen">
         <action
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.RegisterFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.auth.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/otpFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.OTPFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.auth.OTPFragment"
         android:label="OTPFragment"
         tools:layout="@layout/fragment_o_t_p">
         <action

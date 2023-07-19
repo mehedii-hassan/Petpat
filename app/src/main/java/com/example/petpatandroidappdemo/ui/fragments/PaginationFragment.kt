@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import com.example.petpatandroidappdemo.adapters.PaginationAdapter
 import com.example.petpatandroidappdemo.databinding.FragmentPaginationBinding
 import com.example.petpatandroidappdemo.models.unsplashapimodel.PhotoModel
-import com.example.petpatandroidappdemo.network.ApiClient
+import com.example.petpatandroidappdemo.network.PhotoService.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
