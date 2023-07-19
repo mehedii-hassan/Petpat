@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_managements_nav_graph"
+    app:startDestination="@id/orderDetailsFragment">
+
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.order_managements.OrderDetailsFragment"
+        android:label="OrderDetailsFragment"
+        tools:layout="@layout/fragment_order_details"/>
+</navigation>

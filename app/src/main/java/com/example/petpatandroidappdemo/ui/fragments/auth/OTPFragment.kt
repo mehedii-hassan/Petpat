@@ -14,7 +14,6 @@ import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentOTPBinding
 import com.example.petpatandroidappdemo.models.request.OtpRequestModel
 import com.example.petpatandroidappdemo.models.request.RegisterRequestModel
-import com.example.petpatandroidappdemo.ui.fragments.OTPFragmentArgs
 import com.example.petpatandroidappdemo.viewmodels.OtpViewModel
 
 class OTPFragment : Fragment() {

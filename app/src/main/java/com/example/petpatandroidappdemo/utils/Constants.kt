@@ -14,6 +14,9 @@ object Constants {
         imageList.add(R.drawable.arrow_upload)
         imageList.add(R.drawable.arrow_upload)
         imageList.add(R.drawable.arrow_upload)
+        imageList.add(R.drawable.arrow_upload)
+        imageList.add(R.drawable.arrow_upload)
+        imageList.add(R.drawable.arrow_upload)
 
         return imageList
     }

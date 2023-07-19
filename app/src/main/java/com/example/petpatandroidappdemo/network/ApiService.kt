@@ -10,6 +10,7 @@ import com.example.petpatandroidappdemo.models.response.LoginResponseModel
 import com.example.petpatandroidappdemo.models.response.OtpResponseModel
 import com.example.petpatandroidappdemo.models.response.RegisterResponseModel
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -31,7 +32,7 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Field("name") name: String,
         @Field("price") price: String,
-        @FieldMap imageFields: Map<String, String>
+        @Field("imageUris") imageUris: RequestBody
     ): Call<AddProductResponseModel>
     /*
     @POST("/api/v1/product/add")
