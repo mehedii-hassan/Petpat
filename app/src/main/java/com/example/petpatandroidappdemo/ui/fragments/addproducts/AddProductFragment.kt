@@ -15,14 +15,12 @@ import com.example.petpatandroidappdemo.callbacks.ImageUrlCallback
 import com.example.petpatandroidappdemo.callbacks.OptionDialogDismissListener
 import com.example.petpatandroidappdemo.databinding.FragmentAddProductBinding
 import com.example.petpatandroidappdemo.databinding.RvAddProductItemDesignBinding
-import com.example.petpatandroidappdemo.models.request.Image
 import com.example.petpatandroidappdemo.models.response.AddProductResponseModel
 import com.example.petpatandroidappdemo.models.response.LoginResponseModel
 import com.example.petpatandroidappdemo.network.RetrofitClient
 import com.example.petpatandroidappdemo.ui.fragments.dialogfragments.ImageUploadOptionDialogFragment
 import com.example.petpatandroidappdemo.utils.Constants
 import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Call
@@ -38,6 +36,8 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
     private lateinit var dialogFragment: ImageUploadOptionDialogFragment
     private var position = 0
     private val ImageListRequestlist = mutableListOf<String>()
+
+    private val imageList = ArrayList<RequestBody>()
     private lateinit var headersMap: Map<String, String>
     private var count = 0
     private lateinit var loginResponse: LoginResponseModel
@@ -101,7 +101,7 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
 
             RetrofitClient.getService()
 
-                .addProduct("Bearer $token", productName, productPrice, uri)
+                .addProductForListOfImage("Bearer $token", productName, productPrice, imageList)
                 .enqueue(object : Callback<AddProductResponseModel> {
                     override fun onResponse(
                         call: Call<AddProductResponseModel>,
@@ -109,7 +109,7 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
                     ) {
                         Log.e(
                             "TAG",
-                            "response ${response.body()} token"
+                            "response ${response.body()} size ${imageList.size}"
                         )
                     }
 
@@ -142,7 +142,9 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
         count++
 
         val imageFile = File(url)
-        uri = imageFile.asRequestBody("image/jpeg".toMediaType())
+        val uri = imageFile.asRequestBody("image/jpeg".toMediaType())
+        imageList.add(uri)
+        //uri = RequestBody.create("image/*".toMediaType(), imageFile)
 
         //val imageRequestBody = imageFile.asRequestBody("image/*".toMediaTypeOrNull())
         //imageFields["image[$count]\"; filename=\"${imageFile.name}"] = imageRequestBody.toString()
