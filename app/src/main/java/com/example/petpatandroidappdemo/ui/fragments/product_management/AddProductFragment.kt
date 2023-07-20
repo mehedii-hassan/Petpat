@@ -1,4 +1,4 @@
-package com.example.petpatandroidappdemo.ui.fragments.addproducts
+package com.example.petpatandroidappdemo.ui.fragments.product_management
 
 
 import android.os.Bundle
@@ -8,7 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.adapters.AddProductAdapter
 import com.example.petpatandroidappdemo.callbacks.AddProductItemSelectListener
 import com.example.petpatandroidappdemo.callbacks.CrossBtnClickDeleteListener
@@ -16,17 +19,13 @@ import com.example.petpatandroidappdemo.callbacks.ImageUrlCallback
 import com.example.petpatandroidappdemo.callbacks.OptionDialogDismissListener
 import com.example.petpatandroidappdemo.databinding.FragmentAddProductBinding
 import com.example.petpatandroidappdemo.databinding.RvAddProductItemDesignBinding
-import com.example.petpatandroidappdemo.models.response.AddProductResponseModel
 import com.example.petpatandroidappdemo.models.response.LoginResponseModel
-import com.example.petpatandroidappdemo.network.RetrofitClient
 import com.example.petpatandroidappdemo.ui.fragments.dialogfragments.ImageUploadOptionDialogFragment
 import com.example.petpatandroidappdemo.utils.Constants
+import com.example.petpatandroidappdemo.viewmodels.AddProductViewModel
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.io.File
 
 class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialogDismissListener,
@@ -40,11 +39,13 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
     private var count = 0
     private lateinit var loginResponse: LoginResponseModel
     private lateinit var uri: RequestBody
+    private lateinit var viewModel: AddProductViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        viewModel = ViewModelProvider(this).get(AddProductViewModel::class.java)
         binding = FragmentAddProductBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -52,6 +53,7 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val token = arguments?.getString("accessToken").toString()
+        val spId = arguments?.getInt("spId")
         Log.e("TAG", "token $token")
         adapter = AddProductAdapter(Constants.imageList(), this)
         binding.rvAddProduct.layoutManager =
@@ -64,28 +66,20 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
             val productName = binding.etProductName.text.toString()
             val productPrice = binding.etProductPrice.text.toString()
 
-
-            RetrofitClient.getService()
-
-                .addProductForListOfImage("Bearer $token", productName, productPrice, imageList)
-                .enqueue(object : Callback<AddProductResponseModel> {
-                    override fun onResponse(
-                        call: Call<AddProductResponseModel>,
-                        response: Response<AddProductResponseModel>
-                    ) {
+            viewModel.getAddProductResponse("Bearer $token", productName, productPrice, imageList)
+                .observe(viewLifecycleOwner) {
+                    if (it.success) {
+                        val bundle = Bundle()
+                        bundle.putInt("spId", spId!!)
+                        Navigation.findNavController(requireView())
+                            .navigate(R.id.actionAddProductToProductsFragment, bundle)
                         Log.e(
                             "TAG",
-                            "response ${response.body()} size ${imageList.size}"
+                            "response $it size ${imageList.size}"
                         )
-                        // Toast.makeText(requireContext(), "size = ${response.body()?.data?.images?.size}").show()
                     }
-
-                    override fun onFailure(call: Call<AddProductResponseModel>, t: Throwable) {
-                        Log.e("TAG", "error ${t.localizedMessage}")
-                    }
-                })
+                }
         }
-        Log.e("TAG", "p")
     }
 
     //get adapter position from adapter class using callback function

@@ -60,6 +60,7 @@ class LoginFragment : Fragment() {
 
                 val bundle = Bundle()
                 bundle.putString("accessToken", it.data.access_token)
+                bundle.putInt("spId", it.data.service_provider_id)
                 //RetrofitClient.getToken(it.data.access_token)
                 Navigation.findNavController(requireView())
                     .navigate(R.id.actionLoginToProductManagementNavGraph, bundle)

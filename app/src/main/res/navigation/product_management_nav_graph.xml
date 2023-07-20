@@ -3,30 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/product_management_nav_graph"
-    app:startDestination="@id/addProductFragment">
+    app:startDestination="@+id/addProductFragment">
 
     <fragment
         android:id="@+id/addProductFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.addproducts.AddProductFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.product_management.AddProductFragment"
         android:label="fragment_add_product"
-        tools:layout="@layout/fragment_add_product" >
-        <argument
-            android:name="loginResponse"
-            app:argType="com.example.petpatandroidappdemo.models.response.LoginResponseModel" />
+        tools:layout="@layout/fragment_add_product">
+        <action
+            android:id="@+id/actionAddProductToProductsFragment"
+            app:destination="@id/productsFragment"
+            app:popUpTo="@+id/addProductFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
-        android:id="@+id/galleryFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.GalleryFragment"
-        android:label="GalleryFragment"
-        tools:layout="@layout/fragment_gallery" />
-    <fragment
-        android:id="@+id/paginationFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.PaginationFragment"
-        android:label="fragment_pagination"
-        tools:layout="@layout/fragment_pagination" />
-    <fragment
-        android:id="@+id/paginationFragmentTwo"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.PaginationFragmentTwo"
-        android:label="PaginationFragmentTwo"
-        tools:layout="@layout/fragment_pagination_two"/>
+        android:id="@+id/productsFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.product_management.ProductsFragment"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_products" >
+
+    </fragment>
 </navigation>

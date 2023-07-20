@@ -79,9 +79,9 @@ class BranchDetailsFragment : Fragment(), OnMapReadyCallback {
         binding.rvServices.layoutManager = LinearLayoutManager(view.context)
         binding.rvServices.adapter = servicesAdapter
 
-        val productsAdapter = ProductsAdapter(productsList)
+       /* val productsAdapter = ProductsAdapter(productsList)
         binding.rvProducts.layoutManager = LinearLayoutManager(view.context)
-        binding.rvProducts.adapter = productsAdapter
+        binding.rvProducts.adapter = productsAdapter*/
 
         val reviewAdapter = ReviewAndRatingAdapter(profileList)
         binding.rvUserReview.layoutManager = LinearLayoutManager(view.context)

@@ -32,6 +32,16 @@ class OrderDetailsFragment : Fragment() {
         binding.btnDecline.setOnClickListener {
             binding.btnDecline.visibility = View.GONE
         }
+
+        binding.btnAcceptOne.setOnClickListener {
+            binding.btnAcceptOne.visibility = View.GONE
+        }
+        binding.btnAcceptTwo.setOnClickListener {
+            binding.btnAcceptTwo.visibility = View.GONE
+        }
+        binding.btnAcceptThree.setOnClickListener {
+            binding.btnAcceptThree.visibility = View.GONE
+        }
     }
 
     private fun setOnButtonClickAction(count: Int) {

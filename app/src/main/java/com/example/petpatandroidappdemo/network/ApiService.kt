@@ -4,9 +4,9 @@ import com.example.petpatandroidappdemo.models.request.LoginRequestModel
 import com.example.petpatandroidappdemo.models.request.OtpRequestModel
 import com.example.petpatandroidappdemo.models.request.RegisterRequestModel
 import com.example.petpatandroidappdemo.models.response.AddProductResponseModel
-import com.example.petpatandroidappdemo.models.response.DataResponse
 import com.example.petpatandroidappdemo.models.response.LoginResponseModel
 import com.example.petpatandroidappdemo.models.response.OtpResponseModel
+import com.example.petpatandroidappdemo.models.response.ProductsResponse
 import com.example.petpatandroidappdemo.models.response.RegisterResponseModel
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -42,6 +42,7 @@ interface ApiService {
         @Field("image") image: RequestBody
     ): Call<AddProductResponseModel>
 
+
     @FormUrlEncoded
     @POST("/api/v1/product/add")
     @JvmSuppressWildcards
@@ -52,16 +53,6 @@ interface ApiService {
         @Field("image") images: List<RequestBody>
     ): Call<AddProductResponseModel>
 
-
-    @GET("/api/v1/issue/admin-issue-categories")
-    fun getData(
-        @Header("Authorization") token: String
-    ): Call<DataResponse>
-
-
-    /* @POST("/api/v1/auth/verify-otp")
-     suspend fun verifyOTP(
-         @Body otpRequestModel: OtpRequestModel
-     ): Response<OtpResponseModel>
- */
+    @GET("/api/v1/product/list/{id}")
+    fun getProductsList(@Path("id") id: Int): Call<ProductsResponse>
 }
