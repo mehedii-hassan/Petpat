@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_service_management_nav_graph"
-    app:startDestination="@+id/manageServicesFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/manageServicesFragment"
@@ -15,4 +15,9 @@
         android:name="com.example.petpatandroidappdemo.ui.fragments.BlankFragment4"
         android:label="fragment_blank4"
         tools:layout="@layout/fragment_blank4" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.home_service_management.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>
