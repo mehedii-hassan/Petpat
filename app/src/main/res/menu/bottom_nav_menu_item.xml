@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mi_explore"
+        android:icon="@drawable/ic_bottom_nav_explore"
+        android:title="Explore" />
+    <item
+        android:id="@+id/mi_orders"
+        android:icon="@drawable/ic_bottom_nav_orders"
+        android:title="Orders" />
+    <item
+        android:id="@+id/mi_notification"
+        android:icon="@drawable/notification"
+        android:title="Notification" />
+    <item
+        android:id="@+id/mi_accounts"
+        android:icon="@drawable/ic_bottom_nav_accounts"
+        android:title="Accounts" />
+
+
+</menu>

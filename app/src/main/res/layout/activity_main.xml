@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,11 +7,37 @@
     tools:context=".ui.activities.MainActivity">
 
 
+    <!-- <androidx.fragment.app.FragmentContainerView
+         android:id="@+id/fragmentContainerView1"
+         android:name="androidx.navigation.fragment.NavHostFragment"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         app:defaultNavHost="true"
+         app:navGraph="@navigation/home_service_management_nav_graph" />-->
+
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView1"
+        android:id="@+id/fragmentContainerView2"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/login_registration_nav_graph" />
-</FrameLayout>
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationId"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/home_service_management_nav_graph" />
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationId"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:background="@drawable/bottom_navigation_background"
+        app:elevation="0dp"
+        app:itemIconTint="@drawable/bottom_nav_item_background"
+        app:itemPaddingBottom="@dimen/_10sdp"
+        app:itemPaddingTop="@dimen/_10sdp"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu_item" />
+</androidx.constraintlayout.widget.ConstraintLayout>
