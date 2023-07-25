@@ -1,5 +1,6 @@
 package com.example.petpatandroidappdemo.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -28,6 +29,10 @@ class AddProductAdapter(private val list: ArrayList<Int>, fragment: Fragment) :
 
     override fun onBindViewHolder(holder: AddProductViewHolder, position: Int) {
 
+        holder.itemView.setOnClickListener {
+            Log.e("TAG", "position  = $position")
+
+        }
         holder.bind(position)
 
     }

@@ -32,26 +32,17 @@ class ProductsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        /*adapter = ProductsAdapter(productResponse)
-        binding.rvProducts.layoutManager = LinearLayoutManager(context)
-        binding.rvProducts.adapter = adapter*/
 
-
-        //val addProductsResponse = args.addProductResponse
         val id = arguments?.getInt("spId")
         if (id != null) {
             viewModel.getProductsResponse(id).observe(viewLifecycleOwner) {
                 if (it.success) {
-                    // productResponse = it
-                    adapter = ProductsAdapter(it)
+                    adapter = ProductsAdapter(it.data,requireContext())
                     binding.rvProducts.layoutManager = LinearLayoutManager(context)
                     binding.rvProducts.adapter = adapter
                     Toast.makeText(context, "Success id =  $id", Toast.LENGTH_SHORT).show()
-
                 }
             }
         }
-
-
     }
 }

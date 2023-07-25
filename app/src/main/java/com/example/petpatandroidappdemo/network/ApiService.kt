@@ -8,6 +8,7 @@ import com.example.petpatandroidappdemo.models.response.LoginResponseModel
 import com.example.petpatandroidappdemo.models.response.OtpResponseModel
 import com.example.petpatandroidappdemo.models.response.ProductsResponse
 import com.example.petpatandroidappdemo.models.response.RegisterResponseModel
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -50,9 +51,26 @@ interface ApiService {
         @Header("Authorization") token: String,
         @Field("name") name: String,
         @Field("price") price: String,
-        @Field("image") images: List<RequestBody>
+        @Field("image") images: List<String>
     ): Call<AddProductResponseModel>
 
     @GET("/api/v1/product/list/{id}")
     fun getProductsList(@Path("id") id: Int): Call<ProductsResponse>
+
+
+    @Multipart
+    @POST("/api/v1/product/add")
+    fun postImage(
+        @Header("Authorization") token: String,
+        @Part name: MultipartBody.Part,
+        @Part price: MultipartBody.Part,
+        @Part image: List<MultipartBody.Part>
+    ): Call<AddProductResponseModel>
+
+    /* @Multipart
+     @POST("upload/image")
+     fun uploadImage(
+         @Part imageFile: MultipartBody.Part
+     ): Call<ImageUploadResponse>
+ */
 }

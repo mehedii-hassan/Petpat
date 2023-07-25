@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.petpatandroidappdemo.models.response.AddProductResponseModel
 import com.example.petpatandroidappdemo.network.RetrofitClient
+import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,9 +18,9 @@ class AddProductViewModel(application: Application) : AndroidViewModel(applicati
 
     fun getAddProductResponse(
         token: String,
-        productName: String,
-        productPrice: String,
-        imageList: List<RequestBody>
+        productName: MultipartBody.Part,
+        productPrice: MultipartBody.Part,
+        imageList: List<MultipartBody.Part>
     ): LiveData<AddProductResponseModel> {
 
         loadData(token, productName, productPrice, imageList)
@@ -29,13 +30,13 @@ class AddProductViewModel(application: Application) : AndroidViewModel(applicati
 
     private fun loadData(
         token: String,
-        productName: String,
-        productPrice: String,
-        imageList: List<RequestBody>
+        productName: MultipartBody.Part,
+        productPrice: MultipartBody.Part,
+        imageList: List<MultipartBody.Part>
     ) {
 
         RetrofitClient.getService()
-            .addProductForListOfImage(token, productName, productPrice, imageList)
+            .postImage(token, productName, productPrice, imageList)
             .enqueue(object : Callback<AddProductResponseModel> {
                 override fun onResponse(
                     call: Call<AddProductResponseModel>,
@@ -51,7 +52,7 @@ class AddProductViewModel(application: Application) : AndroidViewModel(applicati
                 }
 
                 override fun onFailure(call: Call<AddProductResponseModel>, t: Throwable) {
-                    Log.e("TAG", "error ${t.localizedMessage}")
+                    Log.e("TAG", "error ${t.message}")
                 }
             })
     }
