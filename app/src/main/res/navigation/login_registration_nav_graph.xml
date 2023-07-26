@@ -16,10 +16,11 @@
             app:destination="@id/registerFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
-
         <action
-            android:id="@+id/actionLoginToProductManagementNavGraph"
-            app:destination="@id/product_management_nav_graph" />
+            android:id="@+id/actionLoginToHomeActivity"
+            app:destination="@id/homeActivity"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
 
 
     </fragment>
@@ -71,6 +72,10 @@
 
 
     </fragment>
-    <include app:graph="@navigation/product_management_nav_graph" />
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.petpatandroidappdemo.ui.activities.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
 
 </navigation>

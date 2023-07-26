@@ -147,19 +147,19 @@ class ManageServicesFragment : Fragment(), ManageServicesItemClickListener {
     ) {
         binding.tvProfessional.setOnClickListener {
             //itemClickListener.getManageServicesAdapterPosition(position, binding)
-            Navigation.findNavController(it).navigate(R.id.blankFragment4)
+            // Navigation.findNavController(it).navigate(R.id.blankFragment4)
         }
         binding.cvItemServices.setOnClickListener {
 
             // itemClickListener.getManageServicesAdapterPosition(position, binding)
 
-            Navigation.findNavController(it).navigate(R.id.blankFragment4)
+            // Navigation.findNavController(it).navigate(R.id.blankFragment4)
 
         }
     }
 
     override fun getManageServicesAdapterPosition(position: Int) {
-        Navigation.findNavController(requireView()).navigate(R.id.blankFragment4)
+        // Navigation.findNavController(requireView()).navigate(R.id.blankFragment4)
 
     }
 

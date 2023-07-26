@@ -3,21 +3,49 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_service_management_nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/exploreFragment">
+
 
     <fragment
-        android:id="@+id/manageServicesFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.ManageServicesFragment"
-        android:label="ManageServicesFragment"
-        tools:layout="@layout/rv_manage_services_item_design" />
+        android:id="@+id/exploreFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.bottom_nav_item_fragments.ExploreFragment"
+        android:label="ExploreFragment"
+        tools:layout="@layout/fragment_explore">
+
+
+        <action
+            android:id="@+id/action_exploreFragment_to_manageProductsActivity"
+            app:destination="@id/manageProductsActivity" />
+    </fragment>
     <fragment
-        android:id="@+id/blankFragment4"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.BlankFragment4"
-        android:label="fragment_blank4"
-        tools:layout="@layout/fragment_blank4" />
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.bottom_nav_item_fragments.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.home_service_management.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/ordersFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.bottom_nav_item_fragments.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/accountsFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.bottom_nav_item_fragments.AccountsFragment"
+        android:label="fragment_accounts"
+        tools:layout="@layout/fragment_accounts" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.product_management.AddProductFragment"
+        android:label="AddProductFragment"
+        tools:layout="@layout/fragment_add_product" />
+    <activity
+        android:id="@+id/bottomShitdialogOpenTestActivity"
+        android:name="com.example.petpatandroidappdemo.ui.activities.BottomShitdialogOpenTestActivity"
+        android:label="BottomShitdialogOpenTestActivity" />
+    <activity
+        android:id="@+id/manageProductsActivity"
+        android:name="com.example.petpatandroidappdemo.ui.activities.ManageProductsActivity"
+        android:label="activity_manage_products"
+        tools:layout="@layout/activity_manage_products" />
+
+
 </navigation>

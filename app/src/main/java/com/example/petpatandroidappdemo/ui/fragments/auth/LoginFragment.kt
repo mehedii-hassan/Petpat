@@ -37,7 +37,7 @@ class LoginFragment : Fragment() {
 
         binding.tvRegister.setOnClickListener {
             Navigation.findNavController(requireView())
-                .navigate(R.id.actionLoginToProductManagementNavGraph)
+                .navigate(R.id.loginFragment)
 
         }
     }
@@ -63,7 +63,9 @@ class LoginFragment : Fragment() {
                 bundle.putInt("spId", it.data.service_provider_id)
                 //RetrofitClient.getToken(it.data.access_token)
                 Navigation.findNavController(requireView())
-                    .navigate(R.id.actionLoginToProductManagementNavGraph, bundle)
+                    .navigate(R.id.actionLoginToHomeActivity, bundle)
+
+
             }
         }
 
