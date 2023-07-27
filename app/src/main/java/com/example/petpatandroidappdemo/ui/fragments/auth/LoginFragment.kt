@@ -1,6 +1,7 @@
 package com.example.petpatandroidappdemo.ui.fragments.auth
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.navigation.Navigation
 import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentLoginBinding
 import com.example.petpatandroidappdemo.models.request.LoginRequestModel
+import com.example.petpatandroidappdemo.utils.SessionManager
 import com.example.petpatandroidappdemo.viewmodels.LoginViewModel
 
 class LoginFragment : Fragment() {
@@ -18,6 +20,8 @@ class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
+    private lateinit var accessToken: String
+    private lateinit var spId: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,15 +29,29 @@ class LoginFragment : Fragment() {
     ): View {
 
         binding = FragmentLoginBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
+
+        //Get data from SharedPreferences--------------------------------
+        accessToken = SessionManager.getAuthToken(requireContext()).toString()
+        spId = SessionManager.getSPId(requireContext()).toString()
+
+        Log.e("TAG", "access_token = $accessToken sp_id =$spId")
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        //if token is not null then navigate to
+        if (accessToken.isNotEmpty()) {
+            Navigation.findNavController(requireView()).navigate(R.id.actionLoginToHomeActivity)
+            Log.e("TAG", "access_token= $accessToken ")
+            return
+        }
         binding.btnLogIn.setOnClickListener {
             userLogin()
         }
+
 
         binding.tvRegister.setOnClickListener {
             Navigation.findNavController(requireView())
@@ -54,16 +72,13 @@ class LoginFragment : Fragment() {
                 Toast.makeText(context, "Login successfully", Toast.LENGTH_SHORT)
                     .show()
 
-                /* val action =
-                     LoginFragmentDirections.actionLoginToProductManagementNavGraph()
- */
+                //Save access token and sp id  to SharedPreferences-----------------------
+                SessionManager.saveAuthToken(requireContext(), it.data.access_token)
+                SessionManager.saveSPId(requireContext(), it.data.service_provider_id.toString())
 
-                val bundle = Bundle()
-                bundle.putString("accessToken", it.data.access_token)
-                bundle.putInt("spId", it.data.service_provider_id)
                 //RetrofitClient.getToken(it.data.access_token)
                 Navigation.findNavController(requireView())
-                    .navigate(R.id.actionLoginToHomeActivity, bundle)
+                    .navigate(R.id.actionLoginToHomeActivity)
 
 
             }

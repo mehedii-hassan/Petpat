@@ -29,7 +29,7 @@ object RetrofitClient {
 
     fun getService(): ApiService {
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://178.128.207.239:8010")
+            .baseUrl("http://178.128.207.239")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         return retrofit.create(ApiService::class.java)
