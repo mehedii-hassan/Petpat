@@ -26,7 +26,7 @@ class ImageUploadOptionDialogFragment(
     BottomSheetDialogFragment() {
 
     private val dialogDismissListener = fragment as OptionDialogDismissListener
-    private val imageUrl = fragment as ImageUrlCallback
+    private val imageUri = fragment as ImageUrlCallback
 
     private lateinit var binding: FragmentImageUploadOptionDialogBinding
     private val PICK_IMAGE_REQUEST = 1
@@ -69,7 +69,10 @@ class ImageUploadOptionDialogFragment(
         //super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK && data != null) {
             val selectedImageUri: Uri? = data.data
-            imageUrl.getImageUrl(position, selectedImageUri.toString())
+            if(selectedImageUri!=null){
+
+                imageUri.getImageUri(position, selectedImageUri)
+            }
             Log.e("TAG", "uri " + selectedImageUri.toString())
             binding_.ivUploadOne.setImageURI(selectedImageUri)
             binding_.cvUploadContainer.visibility = View.GONE

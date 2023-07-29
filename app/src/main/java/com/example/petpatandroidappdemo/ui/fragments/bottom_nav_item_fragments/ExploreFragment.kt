@@ -25,10 +25,7 @@ class ExploreFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        Toast.makeText(context, "befor Clicked", Toast.LENGTH_SHORT).show()
-
         binding.llContainerMangeProducts.setOnClickListener {
-            Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show()
             Navigation.findNavController(view)
                 .navigate(R.id.action_exploreFragment_to_manageProductsActivity)
         }

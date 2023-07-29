@@ -1,7 +1,7 @@
 package com.example.petpatandroidappdemo.callbacks
 
-import com.example.petpatandroidappdemo.databinding.RvAddProductItemDesignBinding
+import android.net.Uri
 
 interface ImageUrlCallback {
-    fun getImageUrl(position: Int,url:String)
+    fun getImageUri(position: Int, uri: Uri?)
 }

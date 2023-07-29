@@ -22,5 +22,13 @@
         android:label="fragment_products"
         tools:layout="@layout/fragment_products" >
 
+        <action
+            android:id="@+id/actionProductsToEditProductsFragment"
+            app:destination="@id/editProductsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/editProductsFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.product_management.EditProductsFragment"
+        android:label="EditProductsFragment"
+        tools:layout="@layout/fragment_edit_products"/>
 </navigation>

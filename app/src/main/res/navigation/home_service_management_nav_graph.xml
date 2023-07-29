@@ -32,15 +32,6 @@
         android:name="com.example.petpatandroidappdemo.ui.fragments.bottom_nav_item_fragments.AccountsFragment"
         android:label="fragment_accounts"
         tools:layout="@layout/fragment_accounts" />
-    <fragment
-        android:id="@+id/addProductFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.product_management.AddProductFragment"
-        android:label="AddProductFragment"
-        tools:layout="@layout/fragment_add_product" />
-    <activity
-        android:id="@+id/bottomShitdialogOpenTestActivity"
-        android:name="com.example.petpatandroidappdemo.ui.activities.BottomShitdialogOpenTestActivity"
-        android:label="BottomShitdialogOpenTestActivity" />
     <activity
         android:id="@+id/manageProductsActivity"
         android:name="com.example.petpatandroidappdemo.ui.activities.ManageProductsActivity"

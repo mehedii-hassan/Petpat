@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="15dp"
-        tools:context=".ui.fragments.product_management.AddProductFragment">
+        tools:context=".ui.fragments.product_management.EditProductsFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clTopContainerId"
@@ -26,16 +26,16 @@
                 android:layout_width="24dp"
                 android:layout_height="25dp"
                 android:src="@drawable/arrow_left"
-                app:layout_constraintBottom_toBottomOf="@+id/tvAddProduct"
+                app:layout_constraintBottom_toBottomOf="@+id/tvEditProduct"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvAddProduct"
+                app:layout_constraintTop_toTopOf="@+id/tvEditProduct"
                 app:tint="#040D1B" />
 
             <TextView
-                android:id="@+id/tvAddProduct"
+                android:id="@+id/tvEditProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Product"
+                android:text="Edit Product"
                 android:textColor="#040D1B"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -48,7 +48,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvAddProduct"
+            android:id="@+id/rvEditProduct"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_65sdp"
             android:layout_marginTop="30dp"
@@ -68,7 +68,7 @@
             android:textColor="#7C7C7C"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rvAddProduct" />
+            app:layout_constraintTop_toBottomOf="@+id/rvEditProduct" />
 
         <EditText
             android:id="@+id/etProductName"
@@ -113,13 +113,25 @@
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="200dp"
             android:background="@drawable/custom_products_save_btn_background"
             android:gravity="center"
-            android:text="save"
+            android:text="Save"
             android:textColor="@color/white"
             android:textSize="15sp"
             app:layout_constraintTop_toBottomOf="@+id/etProductPrice" />
+
+        <TextView
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/custom_products_reset_btn_background"
+            android:gravity="center"
+            android:text="Reset"
+            android:textColor="#8FA1B1"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/btnSave" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -21,7 +21,6 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: LoginViewModel
     private lateinit var accessToken: String
-    private lateinit var spId: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,9 +33,8 @@ class LoginFragment : Fragment() {
 
         //Get data from SharedPreferences--------------------------------
         accessToken = SessionManager.getAuthToken(requireContext()).toString()
-        spId = SessionManager.getSPId(requireContext()).toString()
 
-        Log.e("TAG", "access_token = $accessToken sp_id =$spId")
+        Log.e("TAG", "access_token = $accessToken ")
         return binding.root
     }
 
@@ -74,7 +72,7 @@ class LoginFragment : Fragment() {
 
                 //Save access token and sp id  to SharedPreferences-----------------------
                 SessionManager.saveAuthToken(requireContext(), it.data.access_token)
-                SessionManager.saveSPId(requireContext(), it.data.service_provider_id.toString())
+                SessionManager.saveSPId(requireContext(), it.data.service_provider_id)
 
                 //RetrofitClient.getToken(it.data.access_token)
                 Navigation.findNavController(requireView())

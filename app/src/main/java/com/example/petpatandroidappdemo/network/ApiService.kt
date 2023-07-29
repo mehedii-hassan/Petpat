@@ -6,6 +6,7 @@ import com.example.petpatandroidappdemo.models.request.RegisterRequestModel
 import com.example.petpatandroidappdemo.models.response.AddProductResponseModel
 import com.example.petpatandroidappdemo.models.response.LoginResponseModel
 import com.example.petpatandroidappdemo.models.response.OtpResponseModel
+import com.example.petpatandroidappdemo.models.response.EditProductResponse
 import com.example.petpatandroidappdemo.models.response.ProductsResponse
 import com.example.petpatandroidappdemo.models.response.RegisterResponseModel
 import okhttp3.MultipartBody
@@ -56,6 +57,9 @@ interface ApiService {
 
     @GET("/api/v1/product/list/{id}")
     fun getProductsList(@Path("id") id: Int): Call<ProductsResponse>
+
+    @GET("/api/v1/product/{id}")
+    fun getEditProductList(@Path("id") id: Int): Call<EditProductResponse>
 
 
     @Multipart

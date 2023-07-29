@@ -1,24 +1,30 @@
 package com.example.petpatandroidappdemo.ui.fragments.product_management
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.adapters.ProductsAdapter
+import com.example.petpatandroidappdemo.callbacks.ProductItemsSelectListener
 import com.example.petpatandroidappdemo.databinding.FragmentProductsBinding
+import com.example.petpatandroidappdemo.models.response.AddProductResponseModel
+import com.example.petpatandroidappdemo.models.response.ProductsResponse
+import com.example.petpatandroidappdemo.utils.SessionManager
 import com.example.petpatandroidappdemo.viewmodels.ProductsViewModel
 
-class ProductsFragment : Fragment() {
+class ProductsFragment : Fragment(), ProductItemsSelectListener {
 
     private lateinit var binding: FragmentProductsBinding
     private lateinit var viewModel: ProductsViewModel
     private lateinit var adapter: ProductsAdapter
-    //private lateinit var productResponse: ProductsResponse
-
+    private lateinit var productsResponse: ProductsResponse
     // private val args: ProductsFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -31,18 +37,27 @@ class ProductsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-
-        val id = arguments?.getInt("spId")
-        if (id != null) {
-            viewModel.getProductsResponse(id).observe(viewLifecycleOwner) {
+        binding.btnAddProduct.setOnClickListener{
+            Navigation.findNavController(requireView()).navigate(R.id.addProductFragment)
+        }
+        viewModel.getProductsResponse(SessionManager.getSPId(requireContext()))
+            .observe(viewLifecycleOwner) {
                 if (it.success) {
-                    adapter = ProductsAdapter(it.data,requireContext())
+                    productsResponse = it
+                    adapter = ProductsAdapter(it.data, requireContext(), this)
                     binding.rvProducts.layoutManager = LinearLayoutManager(context)
                     binding.rvProducts.adapter = adapter
-                    Toast.makeText(context, "Success id =  $id", Toast.LENGTH_SHORT).show()
+                    Log.e("TAG", "product response success ")
                 }
             }
-        }
     }
+
+    override fun getProductItemsPosition(position: Int) {
+        val bundle = Bundle()
+        bundle.putInt("productId", productsResponse.data[position].id)
+        Navigation.findNavController(requireView())
+            .navigate(R.id.actionProductsToEditProductsFragment, bundle)
+    }
+
+
 }

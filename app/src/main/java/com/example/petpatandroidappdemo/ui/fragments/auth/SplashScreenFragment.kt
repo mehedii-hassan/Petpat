@@ -20,7 +20,6 @@ class SplashScreenFragment : Fragment() {
 
     private lateinit var binding: FragmentSplashScreenBinding
     private lateinit var accessToken: String
-    private lateinit var spId: String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,9 +28,7 @@ class SplashScreenFragment : Fragment() {
 
         //Get data from SharedPreferences--------------------------------
         accessToken = SessionManager.getAuthToken(requireContext()).toString()
-        spId = SessionManager.getSPId(requireContext()).toString()
 
-        Log.e("TAG", "access_token = $accessToken sp_id =$spId")
 
         return binding.root
     }
