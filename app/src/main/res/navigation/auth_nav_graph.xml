@@ -35,6 +35,9 @@
             app:enterAnim="@android:anim/fade_in"
             app:popUpTo="@id/splashScreenFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionSplashToHomeActivity"
+            app:destination="@id/homeActivity" />
 
     </fragment>
     <fragment

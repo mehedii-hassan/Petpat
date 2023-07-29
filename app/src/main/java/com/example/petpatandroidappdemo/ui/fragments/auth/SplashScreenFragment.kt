@@ -38,13 +38,19 @@ class SplashScreenFragment : Fragment() {
 
         Handler().postDelayed({
             //  val intent = Intent(this, LoginActivity::class.java)
-            //if token is not null then navigate to
-            /*if (accessToken.isNotEmpty()) {
-                Navigation.findNavController(requireView()).navigate(R.id.actionLoginToHomeActivity)
+            //if token is not null then navigate to home screen----------------
+            if (accessToken.isNotEmpty()) {
+                Navigation.findNavController(requireView())
+                    .navigate(R.id.actionSplashToHomeActivity)
+                requireActivity().finish()
                 Log.e("TAG", "access_token= $accessToken ")
+            } else {
 
-            }*/
-            Navigation.findNavController(requireView()).navigate(R.id.actionSplashToLoginFragment)
+                Navigation.findNavController(requireView())
+                    .navigate(R.id.actionSplashToLoginFragment)
+                requireActivity().finish()
+
+            }
         }, 3000)
     }
 

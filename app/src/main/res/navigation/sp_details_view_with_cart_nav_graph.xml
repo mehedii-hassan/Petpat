@@ -21,11 +21,6 @@
         android:label="CarDetailsFragment"
         tools:layout="@layout/fragment_car_details" />
     <fragment
-        android:id="@+id/createNewServiceFragment"
-        android:name="com.example.petpatandroidappdemo.ui.fragments.CreateNewServicesFragment"
-        android:label="CreateNewServiceFragment"
-        tools:layout="@layout/fragment_create_new_services" />
-    <fragment
         android:id="@+id/webViewFragment"
         android:name="com.example.petpatandroidappdemo.ui.fragments.WebViewFragment"
         android:label="WebViewFragment"

@@ -22,7 +22,7 @@ class HomeActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.mi_home -> {
                     Navigation.findNavController(binding.fragmentContainerView2)
-                        .navigate(R.id.exploreFragment)
+                        .navigate(R.id.HomeFragment)
                     true
                 }
 

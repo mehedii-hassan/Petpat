@@ -1,4 +1,4 @@
-package com.example.petpatandroidappdemo.ui.fragments.bottom_nav_item_fragments
+package com.example.petpatandroidappdemo.ui.fragments.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

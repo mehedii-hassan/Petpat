@@ -15,20 +15,35 @@
             app:destination="@id/productsFragment"
             app:popUpTo="@+id/addProductFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionAddProductFragmentTohomeActivity"
+            app:destination="@id/homeActivity2"
+            app:popUpTo="@id/addProductFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/productsFragment"
         android:name="com.example.petpatandroidappdemo.ui.fragments.product_management.ProductsFragment"
         android:label="fragment_products"
-        tools:layout="@layout/fragment_products" >
+        tools:layout="@layout/fragment_products">
 
         <action
             android:id="@+id/actionProductsToEditProductsFragment"
             app:destination="@id/editProductsFragment" />
+        <action
+            android:id="@+id/actionProductsToAddProductFragment"
+            app:destination="@id/addProductFragment"
+            app:popUpTo="@id/productsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/editProductsFragment"
         android:name="com.example.petpatandroidappdemo.ui.fragments.product_management.EditProductsFragment"
         android:label="EditProductsFragment"
-        tools:layout="@layout/fragment_edit_products"/>
+        tools:layout="@layout/fragment_edit_products" />
+    <activity
+        android:id="@+id/homeActivity2"
+        android:name="com.example.petpatandroidappdemo.ui.activities.HomeActivity"
+        android:label="HomeActivity"
+        tools:layout="@layout/activity_home" />
 </navigation>

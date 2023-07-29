@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,7 +13,6 @@ import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.adapters.ProductsAdapter
 import com.example.petpatandroidappdemo.callbacks.ProductItemsSelectListener
 import com.example.petpatandroidappdemo.databinding.FragmentProductsBinding
-import com.example.petpatandroidappdemo.models.response.AddProductResponseModel
 import com.example.petpatandroidappdemo.models.response.ProductsResponse
 import com.example.petpatandroidappdemo.utils.SessionManager
 import com.example.petpatandroidappdemo.viewmodels.ProductsViewModel
@@ -37,7 +35,7 @@ class ProductsFragment : Fragment(), ProductItemsSelectListener {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.btnAddProduct.setOnClickListener{
+        binding.btnAddProduct.setOnClickListener {
             Navigation.findNavController(requireView()).navigate(R.id.addProductFragment)
         }
         viewModel.getProductsResponse(SessionManager.getSPId(requireContext()))

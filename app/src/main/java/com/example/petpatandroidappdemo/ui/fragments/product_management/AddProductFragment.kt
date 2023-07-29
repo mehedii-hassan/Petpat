@@ -53,6 +53,12 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
 
         binding.rvAddProduct.adapter = adapter
 
+        binding.ivLeftArrow.setOnClickListener {
+            Navigation.findNavController(requireView())
+                .navigate(R.id.actionAddProductFragmentTohomeActivity)
+            requireActivity().finish()
+        }
+
         binding.btnSave.setOnClickListener {
 
             val productName = binding.etProductName.text.toString()
@@ -97,7 +103,8 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
 
     override fun getImageUri(position: Int, uri: Uri?) {
 
-        val body = UriToFile(requireContext()).convertImageUriToMultipartPart(requireContext(),
+        val body = UriToFile(requireContext()).convertImageUriToMultipartPart(
+            requireContext(),
             uri!!
         )
         if (body != null) {
