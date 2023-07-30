@@ -3,6 +3,7 @@ package com.example.petpatandroidappdemo.ui.fragments.product_management
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -34,7 +35,7 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
     private var position = 0
     private val imageList = ArrayList<MultipartBody.Part>()
     private lateinit var viewModel: AddProductViewModel
-    private lateinit var body: MultipartBody.Part
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +47,7 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
 
         adapter = AddProductAdapter(Constants.imageList(), this)
         binding.rvAddProduct.layoutManager =

@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.petpatandroidappdemo.models.response.AddProductResponseModel
 import com.example.petpatandroidappdemo.network.RetrofitClient
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,7 +35,7 @@ class AddProductViewModel(application: Application) : AndroidViewModel(applicati
     ) {
 
         RetrofitClient.getService()
-            .postImage(token, productName, productPrice, imageList)
+            .addProduct(token, productName, productPrice, imageList)
             .enqueue(object : Callback<AddProductResponseModel> {
                 override fun onResponse(
                     call: Call<AddProductResponseModel>,

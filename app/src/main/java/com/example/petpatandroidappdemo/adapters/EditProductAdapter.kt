@@ -44,6 +44,7 @@ class EditProductAdapter(
                     binding.cvUploadContainer.visibility = View.GONE
                     Picasso.get().load(imageList[position].image)
                         .into(binding.ivUploadOne)
+                    Log.e("TAG", "new image uri ${imageList[position].image}")
                 } else {
                     binding.clUploadContainer.visibility = View.GONE
                     binding.cvUploadContainer.visibility = View.VISIBLE

@@ -19,10 +19,13 @@ import com.example.petpatandroidappdemo.viewmodels.ProductsViewModel
 
 class ProductsFragment : Fragment(), ProductItemsSelectListener {
 
+
     private lateinit var binding: FragmentProductsBinding
     private lateinit var viewModel: ProductsViewModel
     private lateinit var adapter: ProductsAdapter
     private lateinit var productsResponse: ProductsResponse
+    private var page = 1
+    private var perPage = 10
     // private val args: ProductsFragmentArgs by navArgs()
 
     override fun onCreateView(

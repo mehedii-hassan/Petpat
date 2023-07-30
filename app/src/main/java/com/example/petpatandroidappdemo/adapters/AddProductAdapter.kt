@@ -12,6 +12,7 @@ import com.example.petpatandroidappdemo.databinding.RvAddProductItemDesignBindin
 
 class AddProductAdapter(private val list: ArrayList<Int>, fragment: Fragment) :
     RecyclerView.Adapter<AddProductAdapter.AddProductViewHolder>() {
+
     private val itemClickListener = fragment as AddProductItemSelectListener
     private val crossBtnClickDeleteListener = fragment as CrossBtnClickDeleteListener
 
@@ -23,6 +24,7 @@ class AddProductAdapter(private val list: ArrayList<Int>, fragment: Fragment) :
     }
 
     override fun getItemCount(): Int {
+
         return list.size
     }
 
