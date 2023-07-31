@@ -126,7 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="@dimen/_15sdp"
-            android:background="@drawable/custom_products_reset_btn_background"
+            android:background="@drawable/custom_btn_products_reset_background"
             android:gravity="center"
             android:text="Reset"
             android:textColor="#8FA1B1"

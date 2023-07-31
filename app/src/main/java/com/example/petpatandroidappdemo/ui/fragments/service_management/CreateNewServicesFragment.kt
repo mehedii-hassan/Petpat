@@ -1,4 +1,4 @@
-package com.example.petpatandroidappdemo.ui.fragments
+package com.example.petpatandroidappdemo.ui.fragments.service_management
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,18 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import com.example.petpatandroidappdemo.R
-import com.example.petpatandroidappdemo.databinding.FragmentCreateNewServicesTwoBinding
+import com.example.petpatandroidappdemo.databinding.FragmentCreateNewServicesBinding
 
 class CreateNewServicesFragment : Fragment() {
 
     private var editTextCount = 0
-    private lateinit var binding: FragmentCreateNewServicesTwoBinding
+    private lateinit var binding: FragmentCreateNewServicesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCreateNewServicesTwoBinding.inflate(inflater, container, false)
+        binding = FragmentCreateNewServicesBinding.inflate(inflater, container, false)
         // return inflater.inflate(R.layout.fragment_create_new_services, container, false)
         return binding.root
     }

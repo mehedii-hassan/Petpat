@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
-            tools:listitem="@layout/rv_manage_services_item_design" />
+            tools:listitem="@layout/rv_my_services_item_design" />
         <!--one side right-->
        <!-- <com.tsuryo.swipeablerv.SwipeableRecyclerView
             android:id="@+id/rvManageServices"

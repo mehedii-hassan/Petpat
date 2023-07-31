@@ -19,7 +19,7 @@ import com.example.petpatandroidappdemo.R
 import com.example.petpatandroidappdemo.databinding.FragmentManageServicesBinding
 import com.example.petpatandroidappdemo.adapters.MyServicesAdapter
 import com.example.petpatandroidappdemo.callbacks.ManageServicesItemClickListener
-import com.example.petpatandroidappdemo.databinding.RvManageServicesItemDesignBinding
+import com.example.petpatandroidappdemo.databinding.RvMyServicesItemDesignBinding
 
 
 class ManageServicesFragment : Fragment(), ManageServicesItemClickListener {
@@ -143,7 +143,7 @@ class ManageServicesFragment : Fragment(), ManageServicesItemClickListener {
 
     override fun getManageServicesItemDesignBindingInstance(
         position: Int,
-        binding: RvManageServicesItemDesignBinding
+        binding: RvMyServicesItemDesignBinding
     ) {
         binding.tvProfessional.setOnClickListener {
             //itemClickListener.getManageServicesAdapterPosition(position, binding)

@@ -157,6 +157,8 @@
     <string name="terms_amp_conditions"> Terms &amp; Conditions</string>
     <string name="otpMessage">Enter your OTP code from your \n    phone we just sent you.</string>
     <string name="edit_product">Edit Product</string>
+    <string name="desc">There is no order yet. You can Log in
+or Register to make an order in a SP.</string>
 
     <!--Profile & Settings section end-->
 

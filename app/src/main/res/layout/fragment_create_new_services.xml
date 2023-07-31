@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="15dp"
-        tools:context=".ui.fragments.CreateNewServicesFragment">
+        tools:context=".ui.fragments.service_management.CreateNewServicesFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clTopId"
+            android:id="@+id/clTopContainerId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
@@ -47,40 +47,130 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glOne"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent=".3" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/glTwo"
+            android:id="@+id/glSelectSubServices"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent=".5" />
+            app:layout_constraintGuide_percent=".4" />
+
+        <TextView
+            android:id="@+id/tvProfessionalBeautyServices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Professional Beauty Services"
+            android:textColor="#040D1B"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clTopContainerId" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCreateServices"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_65sdp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="Todo"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProfessionalBeautyServices"
+            tools:itemCount="5"
+            tools:listitem="@layout/rv_add_product_item_design" />
 
         <TextView
             android:id="@+id/tvSubServices"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginBottom="@dimen/_10dp"
             android:text="Sub-services"
             android:textColor="#040D1B"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/clTopId" />
+            app:layout_constraintBottom_toTopOf="@+id/glSelectSubServices"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <EditText
-            android:id="@+id/etDefault"
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#B12525"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/glSelectSubServices"
+            app:layout_constraintEnd_toEndOf="@+id/containerSelectSubServices"
+            app:layout_constraintTop_toTopOf="@+id/glSelectSubServices">
+
+            <ImageView
+                android:id="@+id/ivCross"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/cross" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerSelectSubServices"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/custom_button_design"
-            android:text="select sub services"
-            android:textSize="15sp"
-            app:layout_constraintTop_toBottomOf="@+id/glOne" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_cl_container_select_sub_services_background"
+            app:layout_constraintTop_toBottomOf="@+id/glSelectSubServices">
+
+            <EditText
+                android:id="@+id/etDefault"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/custom_et_select_sub_services_background"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Select sub services"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/llContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/llContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="1dp"
+                android:background="@drawable/custom_ll_container_select_sub_services_background"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="#C1BBBB" />
+
+                <TextView
+                    android:id="@+id/tvSROne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="SR" />
+
+                <EditText
+                    android:id="@+id/etPriceOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/custom_et_background"
+                    android:padding="10dp"
+                    android:text="Price"
+                    android:textColor="#51B0ED"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -90,127 +180,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/glTwo">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/containerTwo"
-                android:layout_width="match_parent"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glThree"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/glThree"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_percent=".0" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/glFour"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintGuide_percent=".1" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="50dp"
-                    app:cardElevation="4dp"
-                    app:layout_constraintBottom_toTopOf="@id/clTwo"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/glFour">
-
-                    <ImageView
-                        android:id="@+id/ivCross"
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/cross" />
-                </androidx.cardview.widget.CardView>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/clTwo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/glFour">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cvId"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="4dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
-
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/clContainer"
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:background="@drawable/custom_layout_border"
-                            android:padding="1dp">
-
-                            <EditText
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/custom_et_background"
-                                android:text="select sub services"
-                                android:textColor="#51B0ED"
-                                android:textSize="15sp"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/tvSR"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <EditText
-                                android:id="@+id/etPrice"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/custom_et_background"
-                                android:padding="10dp"
-                                android:text="Price"
-                                android:textColor="#51B0ED"
-                                android:textSize="15sp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <TextView
-                                android:id="@+id/tvSR"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:gravity="center"
-                                android:text="SR"
-                                android:background="@color/white"
-
-
-
-                                app:layout_constraintEnd_toStartOf="@id/etPrice" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="0dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <TextView
-            android:id="@+id/tvAddService"
+            android:id="@+id/tvAddMoreSubService"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="+Add-services"
-            android:textColor="#040D1B"
-            android:textSize="18sp"
+            android:text="+ Add more sub-services"
+            android:textColor="@color/colorOne"
+            android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container" />
+            app:layout_constraintTop_toBottomOf="@+id/containerSelectSubServices" />
+
+        <TextView
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="230dp"
+            android:background="@drawable/custom_products_save_btn_background"
+            android:gravity="center"
+            android:text="save"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddMoreSubService" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
