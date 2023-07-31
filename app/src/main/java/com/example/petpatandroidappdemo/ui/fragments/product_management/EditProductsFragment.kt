@@ -84,7 +84,7 @@ class EditProductsFragment : Fragment() {
             Toast.makeText(context, "reset click", Toast.LENGTH_SHORT)
                 .show()
             deleteProductViewModel.getDeleteProductResponse(
-                "Bearer ${SessionManager.getAuthToken(requireContext())}",
+                "Bearer ${SessionManager.getAccessToken(requireContext())}",
                 productId
             )
                 .observe(viewLifecycleOwner) {
@@ -108,7 +108,7 @@ class EditProductsFragment : Fragment() {
             val price = MultipartBody.Part.createFormData("price", productPrice)
 
             viewModel.getUpdateResponse(
-                "Bearer ${SessionManager.getAuthToken(requireContext())}",
+                "Bearer ${SessionManager.getAccessToken(requireContext())}",
                 productId,
                 name,
                 price,

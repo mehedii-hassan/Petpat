@@ -71,7 +71,7 @@ class AddProductFragment : Fragment(), AddProductItemSelectListener, OptionDialo
             val price = MultipartBody.Part.createFormData("price", productPrice)
 
             viewModel.getAddProductResponse(
-                "Bearer ${SessionManager.getAuthToken(requireContext())}",
+                "Bearer ${SessionManager.getAccessToken(requireContext())}",
                 name,
                 price,
                 imageList

@@ -6,9 +6,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.petpatandroidappdemo.callbacks.ManageServicesItemClickListener
-import com.example.petpatandroidappdemo.databinding.RvManageServicesItemDesignBinding
-import com.example.petpatandroidappdemo.databinding.RvReviewItemDesignBinding
-import com.example.petpatandroidappdemo.databinding.RvServicesItemDesignBinding
+import com.example.petpatandroidappdemo.databinding.RvMyServicesItemDesignBinding
+
 
 class MyServicesAdapter(private val list: ArrayList<Int>, fragment: Fragment) :
     RecyclerView.Adapter<MyServicesAdapter.MyServiceViewHolder>() {
@@ -17,7 +16,7 @@ class MyServicesAdapter(private val list: ArrayList<Int>, fragment: Fragment) :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyServiceViewHolder {
-        val binding = RvManageServicesItemDesignBinding
+        val binding = RvMyServicesItemDesignBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return MyServiceViewHolder(binding)
     }
@@ -39,7 +38,7 @@ class MyServicesAdapter(private val list: ArrayList<Int>, fragment: Fragment) :
     }
 
 
-    inner class MyServiceViewHolder(val binding: RvManageServicesItemDesignBinding) :
+    inner class MyServiceViewHolder(val binding: RvMyServicesItemDesignBinding) :
         ViewHolder(binding.root) {
         fun bind(position: Int) {
 

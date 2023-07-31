@@ -6,30 +6,42 @@ import com.example.petpatandroidappdemo.R
 
 object SessionManager {
 
-    private const val TOKEN = "token"
-    private const val ID = "id"
 
-    fun saveAuthToken(context: Context, token: String) {
-        saveAuthTokenToSharedPreferences(context, token)
+    private const val ID = "id"
+    private const val PREF_NAME = "PetPatSharedPreferences"
+    private const val KEY_ACCESS_TOKEN = "access_token"
+
+    // Initialize SharedPreferences
+    private fun getSharedPreferences(context: Context): SharedPreferences {
+        return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
     }
 
-    private fun saveAuthTokenToSharedPreferences(context: Context, token: String) {
-        val prefs: SharedPreferences =
-            context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
-        val editor = prefs.edit()
-        editor.putString(TOKEN, token)
+    // Save the access token to SharedPreferences------------------------
+    fun saveAccessToken(context: Context, accessToken: String) {
+        saveAccessTokenToSharedPreferences(context, accessToken)
+    }
+
+    private fun saveAccessTokenToSharedPreferences(context: Context, accessToken: String) {
+        val editor = getSharedPreferences(context).edit()
+        editor.putString(KEY_ACCESS_TOKEN, accessToken)
         editor.apply()
     }
 
-
-    fun getAuthToken(context: Context): String? {
-        return getAuthTokenFromSharedPreferences(context)
+    // Get the access token from SharedPreferences
+    fun getAccessToken(context: Context): String? {
+        return getSharedPreferences(context).getString(KEY_ACCESS_TOKEN, null)
     }
 
-    private fun getAuthTokenFromSharedPreferences(context: Context): String? {
-        val prefs: SharedPreferences =
-            context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
-        return prefs.getString(TOKEN, null)
+    // Clear the access token from SharedPreferences
+    fun clearAccessToken(context: Context) {
+        val editor = getSharedPreferences(context).edit()
+        editor.remove(KEY_ACCESS_TOKEN)
+        editor.apply()
+    }
+
+    // Check if the user is logged in based on the presence of the access token
+    fun isLoggedIn(context: Context): Boolean {
+        return getAccessToken(context) != null
     }
 
     fun saveSPId(context: Context, id: Int) {
@@ -57,12 +69,6 @@ object SessionManager {
         return prefs.getInt(this.ID, 0)
     }
 
-    fun clearData(context: Context) {
-        val editor =
-            context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
-                .edit()
-        editor.clear()
-        editor.apply()
-    }
+
 
 }

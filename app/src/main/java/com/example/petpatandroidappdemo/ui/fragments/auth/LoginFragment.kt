@@ -32,7 +32,7 @@ class LoginFragment : Fragment() {
 
 
         //Get data from SharedPreferences--------------------------------
-        accessToken = SessionManager.getAuthToken(requireContext()).toString()
+        accessToken = SessionManager.getAccessToken(requireContext()).toString()
 
         Log.e("TAG", "access_token = $accessToken ")
         return binding.root
@@ -41,11 +41,11 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         //if token is not null then navigate to
-        if (accessToken.isNotEmpty()) {
+        /*if (accessToken.isNotEmpty()) {
             Navigation.findNavController(requireView()).navigate(R.id.actionLoginToHomeActivity)
             Log.e("TAG", "access_token= $accessToken ")
             return
-        }
+        }*/
         binding.btnLogIn.setOnClickListener {
             userLogin()
         }
@@ -55,6 +55,11 @@ class LoginFragment : Fragment() {
             Navigation.findNavController(requireView())
                 .navigate(R.id.loginFragment)
 
+        }
+        binding.tvBrowseAsGuest.setOnClickListener {
+            Navigation.findNavController(requireView())
+                .navigate(R.id.actionLoginToHomeActivity)
+            requireActivity().finish()
         }
     }
 
@@ -71,7 +76,7 @@ class LoginFragment : Fragment() {
                     .show()
 
                 //Save access token and sp id  to SharedPreferences-----------------------
-                SessionManager.saveAuthToken(requireContext(), it.data.access_token)
+                SessionManager.saveAccessToken(requireContext(), it.data.access_token)
                 SessionManager.saveSPId(requireContext(), it.data.service_provider_id)
 
                 //RetrofitClient.getToken(it.data.access_token)

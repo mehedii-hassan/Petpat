@@ -45,6 +45,16 @@
         android:name="com.example.petpatandroidappdemo.ui.activities.ManageServicesActivity"
         android:label="activity_manage_services"
         tools:layout="@layout/activity_manage_services" />
+    <fragment
+        android:id="@+id/orderStatusWithoutLoginFragment"
+        android:name="com.example.petpatandroidappdemo.ui.fragments.browse_as_guest.OrderStatusWithoutLoginFragment"
+        android:label="fragment_order_status_without_login"
+        tools:layout="@layout/fragment_order_status_without_login" />
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.petpatandroidappdemo.ui.activities.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
 
 
 </navigation>
