@@ -14,10 +14,18 @@
         android:id="@+id/addNewServicesFragment"
         android:name="com.example.petpatandroidappdemo.ui.fragments.service_management.AddNewServicesFragment"
         android:label="fragment_add_new_services"
-        tools:layout="@layout/fragment_add_new_services" />
+        tools:layout="@layout/fragment_add_new_services" >
+        <action
+            android:id="@+id/action_addNewServicesFragment_to_createNewServicesFragment"
+            app:destination="@id/createNewServicesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/servicesFragment"
         android:name="com.example.petpatandroidappdemo.ui.fragments.service_management.ServicesFragment"
         android:label="fragment_services"
-        tools:layout="@layout/fragment_services" />
+        tools:layout="@layout/fragment_services" >
+        <action
+            android:id="@+id/action_servicesFragment_to_addNewServicesFragment"
+            app:destination="@id/addNewServicesFragment" />
+    </fragment>
 </navigation>

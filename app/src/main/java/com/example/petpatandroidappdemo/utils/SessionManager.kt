@@ -25,6 +25,7 @@ object SessionManager {
         val editor = getSharedPreferences(context).edit()
         editor.putString(KEY_ACCESS_TOKEN, accessToken)
         editor.apply()
+
     }
 
     // Get the access token from SharedPreferences
@@ -68,7 +69,6 @@ object SessionManager {
             context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
         return prefs.getInt(this.ID, 0)
     }
-
 
 
 }

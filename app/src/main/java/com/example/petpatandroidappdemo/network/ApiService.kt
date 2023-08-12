@@ -3,6 +3,7 @@ package com.example.petpatandroidappdemo.network
 import com.example.petpatandroidappdemo.models.request.LoginRequestModel
 import com.example.petpatandroidappdemo.models.request.OtpRequestModel
 import com.example.petpatandroidappdemo.models.request.RegisterRequestModel
+import com.example.petpatandroidappdemo.models.response.AddNewServicesResponse
 import com.example.petpatandroidappdemo.models.response.AddProductResponseModel
 import com.example.petpatandroidappdemo.models.response.DeleteProductResponse
 import com.example.petpatandroidappdemo.models.response.LoginResponseModel
@@ -16,6 +17,16 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
+
+
+    @GET("/api/v1/product/list/{id}")
+    fun getProductsList(@Path("id") id: Int): Call<ProductsResponse>
+
+    @GET("/api/v1/product/{id}")
+    fun getEditProductItemResponse(@Path("id") id: Int): Call<EditProductResponse>
+
+    @GET("/api/v1/service/admin-provided-services")
+    fun getServiceProvidedList(): Call<AddNewServicesResponse>
 
 
     @POST("/api/v1/auth/login")
@@ -41,12 +52,6 @@ interface ApiService {
 
     */
 
-    @GET("/api/v1/product/list/{id}")
-    fun getProductsList(@Path("id") id: Int): Call<ProductsResponse>
-
-    @GET("/api/v1/product/{id}")
-    fun getEditProductItemResponse(@Path("id") id: Int): Call<EditProductResponse>
-
 
     @Multipart
     @POST("/api/v1/product/add")
@@ -66,7 +71,6 @@ interface ApiService {
         @Part price: MultipartBody.Part,
         @Part image: List<MultipartBody.Part>
     ): Call<EditProductResponse>
-
 
 
     @DELETE("/api/v1/product/{id}")

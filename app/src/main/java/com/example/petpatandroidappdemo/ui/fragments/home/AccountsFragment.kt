@@ -25,10 +25,33 @@ class AccountsFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding.btnLogout.setOnClickListener {
 
+        if (SessionManager.isLoggedIn(requireContext())) {
+            binding.containerAccount.visibility = View.VISIBLE
+            binding.containerGuest.visibility = View.GONE
+        } else {
+            binding.containerAccount.visibility = View.GONE
+            binding.containerGuest.visibility = View.VISIBLE
+        }
+
+
+
+        binding.btnLogout.setOnClickListener {
+            //Check token is null or not
             SessionManager.clearAccessToken(requireContext())
             Navigation.findNavController(requireView()).navigate(R.id.mainActivity)
+        }
+        binding.btnLogin.setOnClickListener {
+
+            Navigation.findNavController(requireView()).navigate(R.id.mainActivity)
+            requireActivity().finish()
+
+        }
+        binding.btnRegister.setOnClickListener {
+
+            Navigation.findNavController(requireView()).navigate(R.id.mainActivity)
+            requireActivity().finish()
+
 
         }
     }
